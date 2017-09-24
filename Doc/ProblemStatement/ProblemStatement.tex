@@ -1,49 +1,72 @@
-\documentclass{article}
-
-\usepackage{tabularx}
-\usepackage{booktabs}
-
-\title{SE 3XA3: Problem Statement\\Title of Project}
-
-\author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\documentclass[11pt, oneside]{article}   
+\usepackage{geometry}                		
+\geometry{letterpaper}       
+\usepackage{graphicx}				
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
 }
 
-\date{}
+\usepackage{fancyhdr}
+\usepackage{fancyhdr}
+\fancyhead[L]{September 25, 2017}
+\fancyhead[C]{SE 3XA3 Problem Statement}
+\fancyhead[R]{Group 7}
+\pagestyle{fancy}
 
-\input{../Comments}
+\usepackage{float}
 
+%SetFonts
+
+%SetFonts
+		
+\title{SE 3XA3: Problem Statement\\ReTouch}
+
+\author{Group 7
+		\\ Mediha Munimm; munimm
+		\\ Abrar Attia; attiaa1
+		\\ Susan Fayez; fayezs}
+		
+\date{September 25, 2017}				
+%---------------------------------------------------------------------
 \begin{document}
-
-\begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-\midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
-\bottomrule
-\end{tabularx}
-\end{table}
+\maketitle
+\newpage
+%---------------------------------------------------------------------
+\tableofcontents
+\newpage
+%---------------------------------------------------------------------
 
 \newpage
+%---------------------------------------------------------------------
+%\maketitle
+\section{What problem are you trying to solve?}
 
-\maketitle
+In a world so dependent and advanced by technology, it has now became a requirement for individuals to be proficient with a computer. This includes being able to perform many tasks such as writing up documents, recording data and communicating through virtual methods. In order to complete all these tasks proficiently, people in all fields are expected to be able to type quickly and accurately. Therefore, the goal for this project is to develop an application that will assist users in improving their typing skills and allow them to become more proficient when typing. 
 
-Put your problem statement here.
+\section{Why is this an important problem?}
 
-\wss{comment}
+Improving typing speed and accuracy is very important for the following reasons. To begin, the average employer expects their employees to have basic computer skills and that includes typing. Furthermore, individuals more often than not are expected to have at minimum average typing skills. In addition, learning to type quickly and accurately saves time and consequently saves money. Also, a large focus in today's world is improving proficiency at work and at home and by learning to type better is one very easy solution to this. Lastly, by becoming proficient at typing, individuals have an advantage over other candidates when applying for jobs and therefore open up many more opportunities for themselves.
 
-\ds{comment}
 
-\mj{comment}
+\section{What is the context of the problem you are solving?}
 
-\cm{comment}
+\subsection{Who are the stakeholders?}
 
-\mh{comment}
+The stakeholders for this application include the current developers (group 7) and any future developers. Also, the software clients which are Dr.Bokhari and the course TA's. Lastly, the final stakeholders are all possible users who are individuals who are looking to improve their typing speed and accuracy. 
 
-\end{document}
+ 
+\subsection{What is the environment for the software?}
+
+KTouch is an open-source software that is meant to assist individuals in improving their typing skills. It is currently only available on Linux Operating System. This project is meant to re-implement and improve KTouch into an application called ReTouch. The scope of ReTouch will be to improve KTouch by making it available on other operating systems while improving much of the functionality and user experience. 
+
+
+
+\end{document}  

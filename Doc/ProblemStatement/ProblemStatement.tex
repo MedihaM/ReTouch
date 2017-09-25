@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \usepackage{color}
 \usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -37,6 +39,20 @@
 \date{September 25, 2017}				
 %---------------------------------------------------------------------
 \begin{document}
+
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{llX}
+\toprule
+\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\midrule
+Sept 21 & Susan, Abrar, Mediha & Discussed and wrote out rough copy\\
+Sept 24 & Abrar & Typed out initial structure of problem statement in Latex\\
+... & ... & ...\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \maketitle
 \newpage
 %---------------------------------------------------------------------
@@ -66,7 +82,5 @@ The stakeholders for this application include the current developers (group 7) a
 \subsection{What is the environment for the software?}
 
 KTouch is an open-source software that is meant to assist individuals in improving their typing skills. It is currently only available on Linux Operating System. This project is meant to re-implement and improve KTouch into an application called ReTouch. The scope of ReTouch will be to improve KTouch by making it available on other operating systems while improving much of the functionality and user experience. 
-
-
 
 \end{document}  

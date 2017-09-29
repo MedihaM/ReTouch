@@ -13,8 +13,6 @@
 
 \date{September 29, 2017}
 
-\input{../Comments}
-
 \begin{document}
 
 \begin{table}[hp]
@@ -25,6 +23,7 @@
 \midrule
 Sept 27 & Mediha Munim & Updated template with project/team details\\
 Sept 28 & Mediha Munim & Completed intro - Git worflow plan\\
+Sept 28 & Abrar Attia & Completed POC - Coding Style\\
 Date2 & Name(s) & Description of changes\\
 ... & ... & ...\\
 \bottomrule
@@ -60,9 +59,16 @@ certain feature, they can create a\textit{ feature branch} and commit their upda
 
 \section{Proof of Concept Demonstration Plan}
 
+    The most significant risks that exist with developing the ReTouch application begin with expected difficulty during implementation. The original KTouch application is written in C/C++, and there may be some difficulty transferring the code structure and functionality into Java. In addition, many of the required libraries in the original application may not be portable and therefore may not work with Java code. In order to overcome this risk, similar Java libraries that resemble and function like the C/C++ libraries may be found and used for the ReTouch Application. If no libraries are found, a wrapper can be used around the C/C++ libraries to make them usable in Java. Another risk with developing the application is that implementing a full GUI may be difficult and time consuming. Additionally, testing all the functionally of the application may also cause some trouble. Furthermore, to overcome these risks, tasks will be divided amongst the developers to make sure that testing and GUI implementation are being done successfully and on schedule.
+
+
 \section{Technology}
 
+    The technology that will be used for the implementation, testing, and documentation of the ReTouch project is as follows. The main programming language that will be used to implement the project is Java. The IDE's that will be used are Eclipse or Net Beans depending on the developers preference. In order to test the application, JUnit will be used for standard unit testing. Lastly, the documentation will be broken down into Latex and Doxygen for project documentation, and JavaDocs for code documentation.
+
 \section{Coding Style}
+
+    The coding style that was agreed upon that best suits the ReTouch Project implementation follows the Google Java Guide. The source code that will be written will follow all the structure, syntax rules, naming, and alignment that is provided in the Google Java Guide. 
 
 \section{Project Schedule}
 

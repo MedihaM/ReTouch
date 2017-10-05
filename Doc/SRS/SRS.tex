@@ -3,6 +3,9 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{array}
+
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -21,8 +24,6 @@
 }
 
 \date{\today}
-
-\input{../Comments}
 
 \begin{document}
 
@@ -69,6 +70,17 @@ to the template, you should explicity state what modifications were made.
 
 \subsection{Naming Conventions and Terminology}
 
+\begin{itemize}
+    \item Completed character: A character is completed if the user has successfully typed it on the keyboard when it was the current character. 
+    \item Current character: The character that the user is expected to input at a given moment.
+    \item Incorrect character: A character is incorrect if the wrong keyboard character was inputted by the user when it had been the current character.
+    \item Noncompleted character: A character is noncompleted if it is not a completed character.
+    \item Lesson beginning: The moment when the list of words is first generated and displayed on screen.
+    \item Lesson end: The moment when the last character in the current list of words has been completed.
+\end{itemize}
+
+
+
 \subsection{Relevant Facts and Assumptions}
 
 User characteristics should go under assumptions.
@@ -84,6 +96,48 @@ User characteristics should go under assumptions.
 \subsubsection{Individual Product Use Cases}
 
 \subsection{Functional Requirements}
+
+
+
+\begin{center}
+\begin{longtable}{ |m{2cm}|m{1.8cm}|m{9.4cm}| } 
+    \hline
+    \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
+    \hline
+    FREQ1 & 2 & The system should allow the user to choose between various lessons, each lesson onsisting of a different combination of keyboard symbols/letters. \\ 
+    \hline
+    FREQ2 & 5 & The system shall generate a list of characters consisting of the specified letter/symbol combinations. The list shall consist of around 500-600 characters, including spaces. \\ 
+    \hline
+    FREQ3 & 5 & The system shall display the list of characters using the specified character combinations for the user to type up. The list of characters will be presented on separate lines, with each line being no greater than a predetermined length.  \\ 
+    \hline
+    FREQ4 & 5 & The system shall begin the program at the first character (which will become the current character) and wait for the user to type a character. \\ 
+    \hline
+    FREQ5 & 5 & The system shall move the current character to the next character (on the right) when the user inputs a character (incorrect or not).  \\ 
+    \hline
+    FREQ6 & 5 & The system shall set a current character as “correct” if the user presses the same character that is indicated by the current character. \\ 
+    \hline
+    FREQ7 & 4 & The system shall indicate when an incorrect character has been typed by highlighting the incorrect character. All characters typed after an incorrect character will be considered incorrect, and highlighted as well. \\ 
+    \hline
+    FREQ8 & 4 & The system shall allow the user to move on to the next line only when they have reached the last character on the current line and all the characters on the line are correct. When the “ENTER” key is pressed, the current character will become the first character on the next line. \\ 
+    \hline
+    FREQ9 & 4 & The system shall remove the character to the left of the current character and move the current character to the left when the “BACKSPACE” key is pressed. However, if the current character is the first character of a line, nothing will happen when “BACKSPACE” is pressed. \\ 
+    \hline
+    FREQ10 & 2 & The system should count the number of times an incorrect character is typed. \\ 
+    \hline
+    FREQ11 & 2 & The system should display the elapsed time from when a lesson begins to when the lesson is completed. \\ 
+    \hline
+    FREQ12 & 2 & The system should display the typing accuracy of the user. \\ 
+    \hline
+    FREQ13 & 2 & The system should display the typing speed of the user. \\ 
+    \hline
+    FREQ14 & 4 & The system shall end the typing lesson when all characters are completed and “ENTER” is pressed. \\ 
+    \hline
+    FREQ15 & 3 & The system should display the results (time, typing accuracy, and typing speed) of the lesson after the lesson is done. \\ 
+    \hline
+\end{longtable}
+\end{center}
+
+
 
 \section{Non-functional Requirements}
 

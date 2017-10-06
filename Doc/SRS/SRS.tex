@@ -41,6 +41,7 @@
 \midrule
 Oct 4 & 1.0 & Updated template with project/team names\\
 Oct 5 & 1.1 & Added func. requirements and definitions \\
+Oct 6 & 1.2 & Added project drivers and issues\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -55,35 +56,39 @@ template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
 to the template, you should explicity state what modifications were made.
 
 \section{Project Drivers}
+\subsection{Purpose}
+\indent \indent The purpose of this project is to re-implement the open source project K-Touch. K-Touch is a utility that allows users track their speed and accuracy in typing, and results in improved typing skills through practise and repetition. The re-implementation will improve upon the original project by making the it more user friendly and providing more comprehensive documentation.
 
-\subsection{The Purpose of the Project}
-
-\subsection{The Stakeholders}
-
-\subsubsection{The Client}
-
-\subsubsection{The Customers}
-
-\subsubsection{Other Stakeholders}
+\subsection{Stakeholders}
+\indent \indent The stakeholders in this project are the clients, the developers, and the consumers. The clients are Dr. Bokhari and the TA's, as they are the ones who commissioned the project and it is their expectations that the developers are trying to meet. We, Abrar Attia, Mediha Munim, and Susan Fayez, are the developers of the project. The consumers or users for this project include any person who wishes to improve their typing skills.
 
 \subsection{Mandated Constraints}
+\indent \indent One of the main constraints for this project is the time frame in which it must be completed. The final prototype must be completed and demonstrated by November 27, 2017 and the final source code must be submitted by December 6, 2017.
+\\
+\indent Beyond time constraints, a major limiting factor for this project is that it must have similar functionality to the original K-Touch project. It must offer various text "lessons" for the user to type as quickly and as accurately as they can while offering real-time statistics on their accuracy and speed. 
+\\
+\indent The functionality of the actual program will be constrained by the speed and processing power of the computer on which it is run. This is an issue that is present with the original project, as the program experiences heavy delays between the user input and the interface response.
+
 
 \subsection{Naming Conventions and Terminology}
 
 \begin{itemize}
-    \item Completed character: A character is completed if the user has successfully typed it on the keyboard when it was the current character. 
-    \item Current character: The character that the user is expected to input at a given moment.
-    \item Incorrect character: A character is incorrect if the wrong keyboard character was inputted by the user when it had been the current character.
-    \item Noncompleted character: A character is noncompleted if it is not a completed character.
-    \item Lesson beginning: The moment when the list of words is first generated and displayed on screen.
-    \item Lesson end: The moment when the last character in the current list of words has been completed.
+    \item \textbf{Lessons:} The selections of text provided by the application for the user to type as quickly and accurately as the can.
+    \item \textbf{K-Touch:} The original project. A utility that is designed to help users improve their typing skills.
+    \item\textbf{ Completed character:} A character is completed if the user has successfully typed it on the keyboard when it was the current character. 
+    \item \textbf{Current character:} The character that the user is expected to input at a given moment.
+    \item\textbf{ Incorrect character:} A character is incorrect if the wrong keyboard character was inputted by the user when it had been the current character.
+    \item\textbf{ Noncompleted character:} A character is noncompleted if it is not a completed character.
+    \item \textbf{Lesson beginning:} The moment when the list of words is first generated and displayed on screen.
+    \item \textbf{Lesson end:} The moment when the last character in the current list of words has been completed.
 \end{itemize}
 
 
 
 \subsection{Relevant Facts and Assumptions}
-
-User characteristics should go under assumptions.
+\indent \indent The original project comes with very little user instruction and often experiences heavy delays between the user input and the interface's representation of the user's progress. It also has an unfair policy of requiring the user to type with 100\% accuracy in order to advance progress in the lesson. These are issues that need to be addressed in the re-implementation.
+\\
+\indent The project will be implemented in such a way that it is assumed that the user has basic knowledge of computers, enough to open and run the program. Beyond that, the project will be user friendly and provide comprehensive instructions to ensure the user has an optimal experience. It will also be assumed that the program will be used by one user at a time on a desktop or laptop computer with a physical keyboard.
 
 \section{Functional Requirements}
 
@@ -163,26 +168,38 @@ This section is not in the original Volere template, but health and safety are
 issues that should be considered for every engineering project.
 
 \section{Project Issues}
-
 \subsection{Open Issues}
+\indent \indent In the re-implementation of this project, the source code will be converted from C/C++ to Java. This presents several issues, the most critical of which being the use of required libraries. These libraries may not be portable to Java, which could hinder the functionality of our implementation. 
+\\
+\indent Another challenge this project faces is the lack of familiarity the developers have with the language the original project is implemented in. One group member has limited knowledge of C/C++, but it will still be problematic for the developers to understand the original source code enough to re-implement and improve upon it.
+\\
+\indent Similarly, the developers of this project have never worked on a project of this scope. It will be a challenge to ensure that each component of the application runs smoothly, accurately, and concurrently.
 
 \subsection{Off-the-Shelf Solutions}
+\indent \indent Many similar applications to K-Touch exist that are readily available to users. There are competitive online applications that allow users to race others to accurately complete a selection of text, such as TypeRacer, FreeTypingGame, Nitro Type, and Rapid Typing. There are also applications that are more similar to K-Touch, in that they focus singularly on the user and helping them improve their speed and accuracy, such as Typng Master, Key Hero, and 10FastFingers.
 
 \subsection{New Problems}
+\indent \indent The use of this application can potentially cause new problems for the user. One such problem is a potential Repetitive Strain Injury such as Carpal Tunnel Syndrome if the application is used for a prolonged period of time in a non-ergonomic way. 
 
 \subsection{Tasks}
+\indent \indent The tasks for this project are essentially to complete the deliverables prescribed by Dr. Bokhari within the time frame he provides. The final code should be completed by November 27, 2017 for the final demonstration. Other deliverables include: the Problem Statement, Development Plan, Requirements Document, Proof of Concept Demonstration, Test Plan, Design Document, Revision 0 Demonstration, Peer Evaluation, Test Plan, Test Report, and User Guide.
 
-\subsection{Migration to the New Product}
+\subsection{Migration to the New Project}
+
 
 \subsection{Risks}
+\indent \indent The biggest risk for this project is that the developers may be too unfamiliar with aspects of the original project to effectively re-implement it. Given the time constraints on the project, they must learn quickly in order to have a viable product at the end of the project term. Another risk is in the conversion from C/C++ to Java. It is possible the new project won't be able to have the same level of functionality as the original in the transition.
 
 \subsection{Costs}
+\indent \indent The cost for this project will simply be the time and energy of the developers. They will invest their energy in coding, learning elements of C/C++, researching libraries, learning how to develop GUI's, potentially learning how to implement wrappers, writing documentation, and presenting their work.
 
 \subsection{User Documentation and Training}
-
-\subsection{Waiting Room}
+\indent \indent The final application shall be very user-friendly and easy to use. Comprehensive instructions will be included to diminish any chance of uncertainty in using the product.
 
 \subsection{Ideas for Solutions}
+\indent \indent For the issue of having incompatible required libraries, the first solution would be to search for libraries in Java that have the same functionality as the original C/C++ libraries. Should this solution fail and no viable Java libraries are found, The next solution would be to implement to use of a wrapper for the original libraries to make them usable in Java.
+
+\indent For the issues of inexperience and unfamiliarity, the solution is for the developers to commit themselves to researching and learning about the areas in which they are unclear. Online resources and the help of TA's will be implemented when needed.
 
 \bibliographystyle{plainnat}
 

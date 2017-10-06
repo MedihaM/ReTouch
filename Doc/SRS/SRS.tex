@@ -1,13 +1,59 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[12pt, titlepage]{article}
 
-\title{3XA3 SRS}
-\author{fayezs }
-\date{October 2017}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{array}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Software Requirements Specification\\ReTouch}
+
+\author{Team \#7, ReTouchers
+		\\ Abrar Attia - attiaa1
+		\\ Susan Fayez - fayezs
+		\\ Mediha Munim - munimm
+}
+
+\date{\today}
 
 \begin{document}
 
 \maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Oct 4 & 1.0 & Updated template with project/team names\\
+Oct 5 & 1.1 & Added func. requirements and definitions \\
+Oct 6 & 1.2 & Added project drivers and issues\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+This document describes the requirements for ....  The template for the Software
+Requirements Specification (SRS) is a subset of the Volere
+template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
+to the template, you should explicity state what modifications were made.
 
 \section{Project Drivers}
 \subsection{Purpose}
@@ -23,16 +69,103 @@
 \\
 \indent The functionality of the actual program will be constrained by the speed and processing power of the computer on which it is run. This is an issue that is present with the original project, as the program experiences heavy delays between the user input and the interface response.
 
+
 \subsection{Naming Conventions and Terminology}
+
 \begin{itemize}
     \item \textbf{Lessons:} The selections of text provided by the application for the user to type as quickly and accurately as the can.
-    \item \textbf{K-Touch:} The original project. A utility that is designed to help users improve their typing skills
+    \item \textbf{K-Touch:} The original project. A utility that is designed to help users improve their typing skills.
+    \item\textbf{ Completed character:} A character is completed if the user has successfully typed it on the keyboard when it was the current character. 
+    \item \textbf{Current character:} The character that the user is expected to input at a given moment.
+    \item\textbf{ Incorrect character:} A character is incorrect if the wrong keyboard character was inputted by the user when it had been the current character.
+    \item\textbf{ Noncompleted character:} A character is noncompleted if it is not a completed character.
+    \item \textbf{Lesson beginning:} The moment when the list of words is first generated and displayed on screen.
+    \item \textbf{Lesson end:} The moment when the last character in the current list of words has been completed.
 \end{itemize}
+
+
 
 \subsection{Relevant Facts and Assumptions}
 \indent \indent The original project comes with very little user instruction and often experiences heavy delays between the user input and the interface's representation of the user's progress. It also has an unfair policy of requiring the user to type with 100\% accuracy in order to advance progress in the lesson. These are issues that need to be addressed in the re-implementation.
 \\
 \indent The project will be implemented in such a way that it is assumed that the user has basic knowledge of computers, enough to open and run the program. Beyond that, the project will be user friendly and provide comprehensive instructions to ensure the user has an optimal experience. It will also be assumed that the program will be used by one user at a time on a desktop or laptop computer with a physical keyboard.
+
+\section{Functional Requirements}
+
+\subsection{The Scope of the Work and the Product}
+
+\subsubsection{The Context of the Work}
+
+\subsubsection{Work Partitioning}
+
+\subsubsection{Individual Product Use Cases}
+
+\subsection{Functional Requirements}
+
+
+
+\begin{center}
+\begin{longtable}{ |m{2cm}|m{1.8cm}|m{9.4cm}| } 
+    \hline
+    \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
+    \hline
+    FREQ1 & 2 & The system should allow the user to choose between various lessons, each lesson onsisting of a different combination of keyboard symbols/letters. \\ 
+    \hline
+    FREQ2 & 5 & The system shall generate a list of characters consisting of the specified letter/symbol combinations. The list shall consist of around 500-600 characters, including spaces. \\ 
+    \hline
+    FREQ3 & 5 & The system shall display the list of characters using the specified character combinations for the user to type up. The list of characters will be presented on separate lines, with each line being no greater than a predetermined length.  \\ 
+    \hline
+    FREQ4 & 5 & The system shall begin the program at the first character (which will become the current character) and wait for the user to type a character. \\ 
+    \hline
+    FREQ5 & 5 & The system shall move the current character to the next character (on the right) when the user inputs a character (incorrect or not).  \\ 
+    \hline
+    FREQ6 & 5 & The system shall set a current character as “correct” if the user presses the same character that is indicated by the current character. \\ 
+    \hline
+    FREQ7 & 4 & The system shall indicate when an incorrect character has been typed by highlighting the incorrect character. All characters typed after an incorrect character will be considered incorrect, and highlighted as well. \\ 
+    \hline
+    FREQ8 & 4 & The system shall allow the user to move on to the next line only when they have reached the last character on the current line and all the characters on the line are correct. When the “ENTER” key is pressed, the current character will become the first character on the next line. \\ 
+    \hline
+    FREQ9 & 4 & The system shall remove the character to the left of the current character and move the current character to the left when the “BACKSPACE” key is pressed. However, if the current character is the first character of a line, nothing will happen when “BACKSPACE” is pressed. \\ 
+    \hline
+    FREQ10 & 2 & The system should count the number of times an incorrect character is typed. \\ 
+    \hline
+    FREQ11 & 2 & The system should display the elapsed time from when a lesson begins to when the lesson is completed. \\ 
+    \hline
+    FREQ12 & 2 & The system should display the typing accuracy of the user. \\ 
+    \hline
+    FREQ13 & 2 & The system should display the typing speed of the user. \\ 
+    \hline
+    FREQ14 & 4 & The system shall end the typing lesson when all characters are completed and “ENTER” is pressed. \\ 
+    \hline
+    FREQ15 & 3 & The system should display the results (time, typing accuracy, and typing speed) of the lesson after the lesson is done. \\ 
+    \hline
+\end{longtable}
+\end{center}
+
+
+
+\section{Non-functional Requirements}
+
+\subsection{Look and Feel Requirements}
+
+\subsection{Usability and Humanity Requirements}
+
+\subsection{Performance Requirements}
+
+\subsection{Operational and Environmental Requirements}
+
+\subsection{Maintainability and Support Requirements}
+
+\subsection{Security Requirements}
+
+\subsection{Cultural Requirements}
+
+\subsection{Legal Requirements}
+
+\subsection{Health and Safety Requirements}
+
+This section is not in the original Volere template, but health and safety are
+issues that should be considered for every engineering project.
 
 \section{Project Issues}
 \subsection{Open Issues}
@@ -61,10 +194,28 @@
 \indent \indent The cost for this project will simply be the time and energy of the developers. They will invest their energy in coding, learning elements of C/C++, researching libraries, learning how to develop GUI's, potentially learning how to implement wrappers, writing documentation, and presenting their work.
 
 \subsection{User Documentation and Training}
-\indent \ident The final application shall be very user-friendly and easy to use. Comprehensive instructions will be included to diminish any chance of uncertainty in using the product.
+\indent \indent The final application shall be very user-friendly and easy to use. Comprehensive instructions will be included to diminish any chance of uncertainty in using the product.
 
 \subsection{Ideas for Solutions}
 \indent \indent For the issue of having incompatible required libraries, the first solution would be to search for libraries in Java that have the same functionality as the original C/C++ libraries. Should this solution fail and no viable Java libraries are found, The next solution would be to implement to use of a wrapper for the original libraries to make them usable in Java.
 
 \indent For the issues of inexperience and unfamiliarity, the solution is for the developers to commit themselves to researching and learning about the areas in which they are unclear. Online resources and the help of TA's will be implemented when needed.
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+This section has been added to the Volere template.  This is where you can place
+additional information.
+
+\subsection{Symbolic Parameters}
+
+The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
+Their values are defined in this section for easy maintenance.
+
+
 \end{document}

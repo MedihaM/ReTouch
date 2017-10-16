@@ -22,7 +22,7 @@ public class Scheduler extends TimerTask {
 	 */
 	private void completeTask() {
 		elapsedTime++;
-		System.out.println("                                        " + elapsedTime);
+		System.out.println(elapsedTime);
 	}
 	
 	public static void endTimer(){

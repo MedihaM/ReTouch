@@ -47,6 +47,7 @@ Oct 5 & 1.1 & Added func. requirements and definitions \\
 Oct 6 & 1.2 & Added project drivers and issues\\
 Oct 6 & 1.3 & Added charts and work partitioning\\
 Oct 6 & 1.4 & Added non-func. requirements \\
+Oct 25 & 2.0 & Updated func. requirements \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -81,6 +82,7 @@ Oct 6 & 1.4 & Added non-func. requirements \\
     \item\textbf{Noncompleted character:} A character is noncompleted if it is not a completed character.
     \item \textbf{Lesson beginning:} The moment when the list of words is first generated and displayed on screen.
     \item \textbf{Lesson end:} The moment when the last character in the current list of words has been completed.
+    \item \textbf{Results}: The time, typing accuracy, and typing speed of the user calculated at the end of a lesson.
 \end{itemize}
 
 \subsection{Relevant Facts and Assumptions}
@@ -146,7 +148,7 @@ Oct 6 & 1.4 & Added non-func. requirements \\
     \hline
     FREQ4 & 5 & The system shall begin the program at the first character (which will become the current character) and wait for the user to type a character. \\ 
     \hline
-    FREQ5 & 5 & The system shall move the current character to the next character (to the right) when the user inputs a character (incorrect or not), unless the current character is at the end of a line.  \\ 
+    FREQ5 & 5 & The system shall move the current character to the next character (to the right) when the user inputs a character (incorrect or not), unless the current character is at the end of a line. If it is at the end of a line, the current character will not change.   \\ 
     \hline
     FREQ6 & 5 & The system shall set a current character as completed if the user presses the same character that is indicated by the current character. \\ 
     \hline
@@ -166,7 +168,7 @@ Oct 6 & 1.4 & Added non-func. requirements \\
     \hline
     FREQ14 & 4 & The system shall end the typing lesson when all characters are completed and “ENTER” is pressed. \\ 
     \hline
-    FREQ15 & 3 & The system should display the results (time, typing accuracy, and typing speed) of the lesson after the lesson is done. \\ 
+    FREQ15 & 3 & The system should display the results of the lesson after the lesson is done. \\ 
     \hline
 
 \end{longtable}

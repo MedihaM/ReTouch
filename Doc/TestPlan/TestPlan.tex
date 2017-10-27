@@ -38,8 +38,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 27 & 1.0 & PoC, and Unit Tests added\\
-October 27 & 1.0 & Added general information\\
+October 27 & 1.0 & PoC, and Unit Tests added\\
+October 27 & 1.1 & Added general information\\
+October 27 & 1.2 & Added System Test Description\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -129,81 +130,393 @@ The Gantt Project, which illustrates the project schedule, can be found \href{ru
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{User Input}
 		
-\paragraph{Title for Test}
+\paragraph{Lesson Selection}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{FREQ1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic, Manual.
 					
-Initial State: 
+Initial State: Lesson selection (start) screen.
 					
-Input: 
+Input: The desired Lesson.
 					
-Output: 
+Output: User redirected to beginning of Lesson screen.
 					
-How test will be performed: 
-					
-\item{test-id2\\}
+How test will be performed: The function that runs the selected Lesson will be run. We will check that the correct Lesson was opened.
 
-Type: Functional, Dynamic, Manual, Static etc.
+\end{enumerate}
+\paragraph{Lesson Execution}
+\begin{enumerate}
+    					
+\item{FREQ4\\}
+
+Type: Functional, Dynamic, Manual.
 					
-Initial State: 
+Initial State: Beginning of the Lesson screen.
 					
-Input: 
+Input: A desired Lesson.
 					
-Output: 
+Output: The Lesson is run, the system sets the current character to the first character in the Lesson.
 					
-How test will be performed: 
+How test will be performed: The function that runs the selected Lesson will be run. We will check that the current character value is set to the first character in the given Lesson.
+
+					
+\item{FREQ5\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During a Lesson.
+					
+Input: User types any character.
+					
+Output: The system moves the current character value to the next one in the Lesson.
+					
+How test will be performed: The function that runs the Lesson will be run, user input will be provided. We will check the current character value for each time a character is entered to make sure it is being updated properly.
+
+					
+\item{FREQ6\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During a Lesson
+					
+Input: User types the correct current character in the Lesson.
+					
+Output: The system sets that particular character in the Lesson as completed correctly.
+					
+How test will be performed: The function that runs the Lesson will be run and user input will be entered. We will check that the system only marked the characters entered correctly will be marked as such.
+
+\item{FREQ8\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During the Lesson, when the user reaches the end of a line.
+					
+Input: The user hits the enter key.
+					
+Output: If the user has completed the entire line correctly, they can move on to the next line. If not, they are informed that they must go back and fix their mistakes.
+					
+How test will be performed: The function that runs the Lesson will be run and user input for the first line will be entered. When the enter button is pressed, we will check if the system gives the proper response, either allowing the user to continue on to the next line, or prompt them to fix their mistakes, depending on whether the input for the line was correct or not.
+
+\item{FREQ14\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During the Lesson, when the user has finished typing everything.
+					
+Input: The user hits the enter key.
+					
+Output: If the user has completed the entire Lesson correctly, the Lesson is completed.
+					
+How test will be performed: The function that runs the Lesson will be run and the user input will be entered for the entire Lesson. We will check to make sure the system terminates the Lesson after the correct input is entered for the entire Lesson and the enter key is entered.
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\paragraph{Lesson Mistakes and Corrections}
 
+\begin{enumerate}
+
+\item{FREQ7\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During the Lesson.
+					
+Input: The user enters an incorrect character.
+					
+Output: The system highlights the the character that was entered incorrectly, and if the user continues typing, each character after the initial incorrect character is highlighted as incorrect.
+					
+How test will be performed: The function that runs the Lesson will be run and the user input will be entered incorrectly. We will check that the appropriate characters will be highlighted as incorrect.
+
+\item{FREQ9\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During the Lesson.
+					
+Input: The user enters he backspace key.
+					
+Output: The current character is moved to the previous character in the Lesson. If the current character is the first in the Lesson and backspace is entered, nothing happens.
+					
+How test will be performed: The function that runs the Lesson will be run and user input will be entered. The backspace key will be entered and we will check that the current character has moved appropriately.
+
+\item{FREQ10\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During the Lesson.
+					
+Input: User input for the Lesson, with some mistakes.
+					
+Output: The number of characters entered incorrectly is stored in a variable.
+					
+How test will be performed: The function that runs the Lesson will be run and user input will be entered, with several mistakes. We will check that the counter variable for the number of mistakes is equal to the actual number of mistakes.
+\end{enumerate}
+
+\subsubsection{Display}
+\paragraph{Lesson Generation}
+
+\begin{enumerate}
+
+\item{FREQ2\\}
+
+Type: Functional, Dynamic, Manual.
+					
+Initial State: Lesson selection screen
+					
+Input: The user selects a Lesson
+					
+Output: The system will generate a Lesson, a list of characters, of less than MAX\_LESSON characters, including spaces.
+					
+How test will be performed: The function that runs the Lesson will be run and we will check that the Lesson generated is appropriate. 
+
+\end{enumerate}
+
+\paragraph{Lesson Display}
+
+\begin{enumerate}
+
+
+\item{FREQ3\\}
+
+Type: Structural
+					
+Initial State: The beginning of the Lesson.
+					
+Input: The user works on the Lesson.
+					
+Output: The system displays the list of characters in the Lesson. The list of characters will be presented on separate lines, with each line being no greater than constant MAX\_LINE.
+
+					
+How test will be performed: The function that runs the Lesson will be run and we will check that the Lesson is displayed.
+
+\item{FREQ11\\}
+
+Type: Structural
+					
+Initial State: During the Lesson.
+					
+Input: The user works on the Lesson.
+					
+Output: The system displays the elapsed time, from when the user began the Lesson.
+					
+How test will be performed:  The function that runs the Lesson will be run and we will check that the timer is displayed.
+
+\item{FREQ12\\}
+
+Type: Structural
+					
+Initial State: During the Lesson.
+					
+Input: The user works on the Lesson.
+					
+Output: The system displays the user's typing accuracy.
+					
+How test will be performed:  The function that runs the Lesson will be run and we will check that the user accuracy is displayed correctly. 
+
+\item{FREQ13\\}
+
+Type: Structural
+					
+Initial State: During the Lesson
+					
+Input: The user works on the Lesson
+					
+Output: The system displays the user's typing speed
+					
+How test will be performed:  The function that runs the Lesson will be run and we will check that the user's typing speed is displayed correctly.  
+
+\item{FREQ15\\}
+
+Type: Structural
+					
+Initial State: The Lesson is completed
+					
+Input: The user hits enter after they finish the Lesson
+					
+Output: The results (time, typing accuracy, and typing speed) are displayed to the user.
+		
+How test will be performed: The function that runs the Lesson will be run and the user input will be entered correctly. When the user has completed the Lesson, we will check that the results are properly displayed.
+
+\end{enumerate}
 ...
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
+\subsubsection{Look and Feel}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{NFREQ4}
 
-Type: 
+Type: Structural, Static, Manual
 					
-Initial State: 
+Initial State: Any screen of the application (Lesson Selection, Lesson, Results).
 					
-Input/Condition: 
+Input/Condition: The user navigates the application.
 					
-Output/Result: 
+Output/Result: The GUI’s components will be consistent in colour,text  fonts,  and  window  properties  in  order  to  keep the application organized and easy to navigate
 					
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+How test will be performed: We will navigate all three stages of the application to ensure that the aesthetic is consistent throughout.
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Usability and Humanity}
+\begin{enumerate}
 
-...
+\item{NFREQ5\\}
 
-\subsection{Traceability Between Test Cases and Requirements}
+Type: Structural, Static, Manual
+					
+Initial State: The Lesson selected and about to begin.
+					
+Input/Condition: The user asked to complete the lesson, with no further guidance.
+					
+Output/Result: The user should be able to complete the lesson.
+					
+How test will be performed: A test group of users unfamiliar with the application will be asked to test it out.
+
+\item{NFREQ6\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: The application unopened.
+					
+Input/Condition: The user asked to complete the process of opening the application, selecting a Lesson, and viewing the results, without further guidance.
+					
+Output/Result: The user should be able to easily navigate the three stages of the application.
+					
+How test will be performed:  A test group of users unfamiliar with the application will be asked to test it out.
+
+\item{NFREQ7\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: The application opened, the Lesson unselected.
+					
+Input/Condition: User asked to try various Lessons of varying difficulty.
+					
+Output/Result: The user should find at least one Lesson challenging/helpful in improving their typing skills.
+					
+How test will be performed:  A test group of users unfamiliar with the application, of varying levels of typing proficiency will be asked to test it out.
+
+\item{NFREQ8\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: The application not yet installed.
+					
+Input/Condition: The user asked to install the application.
+					
+Output/Result: The application should be easy for for the user to install.
+					
+How test will be performed:  A test group of users unfamiliar with the application will be asked to install the application.
+
+\end{enumerate}
+\subsubsection{Performance}
+\begin{enumerate}
+
+\item{NFREQ9\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: During the Lesson.
+					
+Input/Condition: The user works on the Lesson.
+					
+Output/Result: The system will respond to the user input within 1 second.
+					
+How test will be performed: A user will work through a Lesson and we will check the response time as they go. 
+
+\item{NFREQ10\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: During the Lesson.
+					
+Input/Condition: The user works on the Lesson.
+					
+Output/Result: The timer displayed to the user will be accurate and begin once the user enters their first character, and will end once the user hits enter to complete the Lesson.
+					
+How test will be performed: A user will work on a Lesson and we will check that the timer is accurate.
+
+\item{NFREQ13\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: Any point in using the application.
+					
+Input/Condition: The user uses the application.
+					
+Output/Result: The application will not interfere with the user's machine.
+					
+How test will be performed: We will check on the user's machine during and after the application runs, to ensure everything is running properly.
+
+\end{enumerate}
+\subsubsection{Operation and Environment}
+\begin{enumerate}
+
+\item{NFREQ14\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: Application installed on a Windows and a Linux machine.
+					
+Input/Condition: User runs the application on both machines.
+					
+Output/Result: The application should run smoothly on both machines.
+					
+How test will be performed: Run the application on both machines.
+
+\item{NFREQ15\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: The application is unopened.
+					
+Input/Condition: The user opens the application.
+					
+Output/Result: The application depends on no other applications to run properly.
+					
+How test will be performed: We will open the application independently of any other applications.
+
+\end{enumerate}
+
+\subsubsection{Security}
+\begin{enumerate}
+
+\item{NFREQ17\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: During a Lesson.
+					
+Input/Condition: The user completes the Lesson.
+					
+Output/Result: The system will not store any information on the user's results. 
+					
+How test will be performed: When the user completes their lesson, we will check to make sure none of the data is stored.
+
+\end{enumerate}
+\subsubsection{Cultural}
+\begin{enumerate}
+
+\item{NFREQ19\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: The application is unopened.
+					
+Input/Condition: A user will be asked to open and go through the three stages of the application (Lesson Selection, Lesson, and Results).
+					
+Output/Result: The user shall not be offended by any of the content within the application.
+					
+How test will be performed: A test group of users unfamiliar with the application will be asked to use the application. 
+\end{enumerate}
 
 \section{Tests for Proof of Concept}
 

@@ -49,7 +49,7 @@ October 27 & 1.2 & Added System Test Description\\
 
 \pagenumbering{arabic}
 
-This document describes the test plan that shall be followed for ReTouch.
+This document describes the plan for testing ReTouch.
 
 \section{General Information}
 
@@ -60,36 +60,6 @@ This document describes the test plan that shall be followed for ReTouch.
 \subsection{Scope}
 
 	The scope of ReTouch will be to improve KTouch by making it available on other operating systems while improving much of the functionality and user experience, while still providing an intuitive GUI and a user guide. Therefore, testing ReTouch will involve testing the GUI, the user input, file input and output, and the other algorithms. 
-
-\subsection{Acronyms, Abbreviations, and Symbols}
-	
-\begin{table}[hbp]
-\caption{\textbf{Table of Abbreviations}} \label{Table}
-
-\begin{tabularx}{\textwidth}{p{3cm}X}
-\toprule
-\textbf{Abbreviation} & \textbf{Definition} \\
-\midrule
-GUI & Graphical User Interface\\
-Abbreviation2 & Definition2\\
-\bottomrule
-\end{tabularx}
-
-\end{table}
-
-\begin{table}[!htbp]
-\caption{\textbf{Table of Definitions}} \label{Table}
-
-\begin{tabularx}{\textwidth}{p{3cm}X}
-\toprule
-\textbf{Term} & \textbf{Definition}\\
-\midrule
-Term1 & Definition1\\
-Term2 & Definition2\\
-\bottomrule
-\end{tabularx}
-
-\end{table}	
 
 \subsection{Overview of Document}
 
@@ -188,7 +158,7 @@ Input: User types the correct current character in the Lesson.
 					
 Output: The system sets that particular character in the Lesson as completed correctly.
 					
-How test will be performed: The function that runs the Lesson will be run and user input will be entered. We will check that the system only marked the characters entered correctly will be marked as such.
+How test will be performed: The function that runs the Lesson will be run and user input will be entered. We will check that the system only marked the characters entered correctly as such.
 
 \item{FREQ8\\}
 
@@ -238,7 +208,7 @@ Type: Functional, Dynamic, Manual.
 					
 Initial State: During the Lesson.
 					
-Input: The user enters he backspace key.
+Input: The user enters the backspace key.
 					
 Output: The current character is moved to the previous character in the Lesson. If the current character is the first in the Lesson and backspace is entered, nothing happens.
 					
@@ -270,7 +240,7 @@ Initial State: Lesson selection screen
 					
 Input: The user selects a Lesson
 					
-Output: The system will generate a Lesson, a list of characters, of less than MAX\_LESSON characters, including spaces.
+Output: The system will generate a Lesson - a list of characters of less than \hyperref[symbols]{MAX\_LESSON} characters, including spaces.
 					
 How test will be performed: The function that runs the Lesson will be run and we will check that the Lesson generated is appropriate. 
 
@@ -289,7 +259,7 @@ Initial State: The beginning of the Lesson.
 					
 Input: The user works on the Lesson.
 					
-Output: The system displays the list of characters in the Lesson. The list of characters will be presented on separate lines, with each line being no greater than constant MAX\_LINE.
+Output: The system displays the list of characters in the Lesson. The list of characters will be presented on separate lines, with each line being no greater than constant \hyperref[symbols]{MAX\_LINE}.
 
 					
 How test will be performed: The function that runs the Lesson will be run and we will check that the Lesson is displayed.
@@ -343,7 +313,6 @@ Output: The results (time, typing accuracy, and typing speed) are displayed to t
 How test will be performed: The function that runs the Lesson will be run and the user input will be entered correctly. When the user has completed the Lesson, we will check that the results are properly displayed.
 
 \end{enumerate}
-...
 
 \subsection{Tests for Nonfunctional Requirements}
 
@@ -359,7 +328,7 @@ Initial State: Any screen of the application (Lesson Selection, Lesson, Results)
 					
 Input/Condition: The user navigates the application.
 					
-Output/Result: The GUI’s components will be consistent in colour,text  fonts,  and  window  properties  in  order  to  keep the application organized and easy to navigate
+Output/Result: The GUI's components will be consistent in colour, text fonts, and window properties in order to keep the application organized and easy to navigate.
 					
 How test will be performed: We will navigate all three stages of the application to ensure that the aesthetic is consistent throughout.
 
@@ -386,7 +355,7 @@ Type: Structural, Static, Manual
 					
 Initial State: The application unopened.
 					
-Input/Condition: The user asked to complete the process of opening the application, selecting a Lesson, and viewing the results, without further guidance.
+Input/Condition: The user, asked to complete the process of opening the application, selecting a Lesson, and viewing the results without further guidance.
 					
 Output/Result: The user should be able to easily navigate the three stages of the application.
 					
@@ -402,7 +371,7 @@ Input/Condition: User asked to try various Lessons of varying difficulty.
 					
 Output/Result: The user should find at least one Lesson challenging/helpful in improving their typing skills.
 					
-How test will be performed:  A test group of users unfamiliar with the application, of varying levels of typing proficiency will be asked to test it out.
+How test will be performed:  A test group of users unfamiliar with the application and of varying levels of typing proficiency will be asked to test it out.
 
 \item{NFREQ8\\}
 
@@ -454,7 +423,7 @@ Input/Condition: The user uses the application.
 					
 Output/Result: The application will not interfere with the user's machine.
 					
-How test will be performed: We will check on the user's machine during and after the application runs, to ensure everything is running properly.
+How test will be performed: We will check on the user's machine during and after the application runs to ensure everything is running properly.
 
 \end{enumerate}
 \subsubsection{Operation and Environment}
@@ -482,7 +451,7 @@ Input/Condition: The user opens the application.
 					
 Output/Result: The application depends on no other applications to run properly.
 					
-How test will be performed: We will open the application independently of any other applications.
+How test will be performed: We will open the application by itself, independent of any other applications.
 
 \end{enumerate}
 
@@ -520,7 +489,7 @@ How test will be performed: A test group of users unfamiliar with the applicatio
 
 \section{Tests for Proof of Concept}
 
-The Proof of Concept testing will focus on validating that all the identified risks in the development of the application can be overcome. The determined risks that can be tested focuses on running the code concurrently. The current program implements a constant timer alongside a main program that requests and waits for keyboard input. 
+The Proof of Concept testing will focus on validating that all the identified risks in the development of the application can be overcome. The determined risks that can be tested focus on running the code concurrently. The current program implements a constant timer alongside a main program that requests and waits for user keyboard input. 
 
 \subsection{Running Programs Concurrently}
 		
@@ -532,31 +501,31 @@ The Proof of Concept testing will focus on validating that all the identified ri
 
 Type: Functional, Dynamic, Manual
 					
-Initial State: no input is set
+Initial State: No input is set.
 					
-Input: User inputs characters
+Input: User inputs characters.
 					
-Output: Calculated accuracy of user to match the expected characters
+Output: Calculated accuracy of user to match the expected characters.
 					
-How test will be performed: The user will be requested to input a certain character as the timer waits for their input. The final characters inputted will be compared to the initial requested characters to determine the users accuracy.Therefore, half the program that tests the users keyboard inputs will be tested. 
+How test will be performed: The user will be requested to input a certain character as the timer waits for their input. The final characters inputted will be compared to the initial requested characters to determine the user's accuracy. Therefore, half of the program that tests the users keyboard inputs will be tested. 
 					
 \item{FC-2\\}
 
 Type: Functional, Dynamic, Manual
 					
-Initial State: no input is set
+Initial State: No input is set.
 					
-Input: User inputs characters
+Input: User inputs characters.
 					
-Output: The total time taken in comparison to the expected time, and the users speed calculation; the total characters per second.
+Output: The total time taken in comparison to the expected time and the user's speed calculation (the total characters per second).
 					
-How test will be performed: As the user inputs characters that are requested, the timer will be tracked. Once the lesson is run through, the total time the program records will be compared to the expected time. Also, the users speed calculation will be compared to the expected characters per second to confirm that the timer is running efficiently. Therefore, such test will confirm that the two programs are running concurrently and both sections are being completed successfully.
+How test will be performed: As the user inputs characters that are requested, the timer will be tracked. Once the lesson is run through, the total time the program records will be compared to the expected time. Also, the user's speed calculation will be compared to the expected characters per second to confirm that the timer is running efficiently. Therefore, such a test will confirm that the two programs are running concurrently and both sections are being completed successfully.
 
 \end{enumerate}
 
 	
 \section{Comparison to Existing Implementation}	
-There is currently no required tests to be done to compare the application to the existing implementation.
+There are currently no required tests to be done to compare the application to the existing implementation.
 				
 \section{Unit Testing Plan}
 
@@ -564,25 +533,22 @@ The JUnit unit testing framework will be used to implement the unit testing for 
 		
 \subsection{Unit testing of internal functions}
 
-When testing the internal functions of the application, the unit tests will be based on each methods input parameters and their expected versus derived outputs. Each method will be testing with standard expected inputs as well as exceptions to improve the programs robustness and reduce bugs. Additionally, every class in the program will include all the required import statements. Therefore, the unit tests will not require any stubs or drivers when testing individual methods or components that depend on multiple methods. In addition, coverage metrics will be used to determine how much of the implemented code was tested. The goal percentage to reach is 80\%. 
+When testing the internal functions of the application, the unit tests will be based on each method's input parameters and their expected versus derived outputs. Each method will be testing with standard expected inputs as well as exceptions to improve the program's robustness and reduce bugs. Additionally, every class in the program will include all the required import statements. Therefore, the unit tests will not require any stubs or drivers when testing individual methods or components that depend on multiple methods. In addition, coverage metrics will be used to determine how much of the implemented code was tested. The goal to reach is 80\% code coverage. 
 		
 \subsection{Unit testing of output files}
 
 When testing the output files and program outputs, there will need to be a comparison between the required output and the generated output. However, at this time, there are no expected output files that will be created when the program is run. 		
 
-\bibliographystyle{plainnat}
-
-\bibliography{SRS}
-
 \newpage
 
+\section{Appendix}
+
 \subsection{Symbolic Parameters}
+\label{symbols}
 
-The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
-
-\subsection{Usability Survey Questions?}
-
-This is a section that would be appropriate for some teams.
+\begin{itemize}
+\item MAX\_LESSON: The maximum number of characters per lesson.
+\item MAX\_LINE: The maximum number of characters per line.
+\end{itemize}
 
 \end{document}

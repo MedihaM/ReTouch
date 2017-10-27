@@ -182,6 +182,8 @@ How test will be performed:
 
 \section{Tests for Proof of Concept}
 
+The Proof of Concept testing will focus on validating that all the identified risks in the development of the application can be overcome. The determined risks include running the code concurrently, such as running a constant timer alongside a main program that requests and waits for keyboard input. Another risk that needs to be resolved and tested includes 
+
 \subsection{Area of Testing1}
 		
 \paragraph{Title for Test}
@@ -220,12 +222,19 @@ How test will be performed:
 
 	
 \section{Comparison to Existing Implementation}	
+There is currently no required tests to be done to compare the application to the existing implementation.
 				
 \section{Unit Testing Plan}
+
+The JUnit unit testing framework will be used to implement the unit testing for the ReTouch application.
 		
 \subsection{Unit testing of internal functions}
+
+When testing the internal functions of the application, the unit tests will be based on each methods input parameters and their expected versus derived outputs. Each method will be testing with standard expected inputs as well as exceptions to improve the programs robustness and reduce bugs. Additionally, every class in the program will include all the required import statements. Therefore, the unit tests will not require any stubs or drivers when testing individual methods or components that depend on multiple methods. 
 		
-\subsection{Unit testing of output files}		
+\subsection{Unit testing of output files}
+
+When testing the output files and program outputs, there will need to be a comparison between the required output and the generated output. However, at this time, there are no expected output files that will be created when the program is run. 		
 
 \bibliographystyle{plainnat}
 

@@ -207,43 +207,39 @@ How test will be performed:
 
 \section{Tests for Proof of Concept}
 
-The Proof of Concept testing will focus on validating that all the identified risks in the development of the application can be overcome. The determined risks include running the code concurrently, such as running a constant timer alongside a main program that requests and waits for keyboard input. Another risk that needs to be resolved and tested includes 
+The Proof of Concept testing will focus on validating that all the identified risks in the development of the application can be overcome. The determined risks that can be tested focuses on running the code concurrently. The current program implements a constant timer alongside a main program that requests and waits for keyboard input. 
 
-\subsection{Area of Testing1}
+\subsection{Running Programs Concurrently}
 		
-\paragraph{Title for Test}
+\paragraph{Constant Timer and User Input Verification}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{FC-1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic, Manual
 					
-Initial State: 
+Initial State: no input is set
 					
-Input: 
+Input: User inputs characters
 					
-Output: 
+Output: Calculated accuracy of user to match the expected characters
 					
-How test will be performed: 
+How test will be performed: The user will be requested to input a certain character as the timer waits for their input. The final characters inputted will be compared to the initial requested characters to determine the users accuracy.Therefore, half the program that tests the users keyboard inputs will be tested. 
 					
-\item{test-id2\\}
+\item{FC-2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic, Manual
 					
-Initial State: 
+Initial State: no input is set
 					
-Input: 
+Input: User inputs characters
 					
-Output: 
+Output: The total time taken in comparison to the expected time, and the users speed calculation; the total characters per second.
 					
-How test will be performed: 
+How test will be performed: As the user inputs characters that are requested, the timer will be tracked. Once the lesson is run through, the total time the program records will be compared to the expected time. Also, the users speed calculation will be compared to the expected characters per second to confirm that the timer is running efficiently. Therefore, such test will confirm that the two programs are running concurrently and both sections are being completed successfully.
 
 \end{enumerate}
-
-\subsection{Area of Testing2}
-
-...
 
 	
 \section{Comparison to Existing Implementation}	
@@ -255,7 +251,7 @@ The JUnit unit testing framework will be used to implement the unit testing for 
 		
 \subsection{Unit testing of internal functions}
 
-When testing the internal functions of the application, the unit tests will be based on each methods input parameters and their expected versus derived outputs. Each method will be testing with standard expected inputs as well as exceptions to improve the programs robustness and reduce bugs. Additionally, every class in the program will include all the required import statements. Therefore, the unit tests will not require any stubs or drivers when testing individual methods or components that depend on multiple methods. 
+When testing the internal functions of the application, the unit tests will be based on each methods input parameters and their expected versus derived outputs. Each method will be testing with standard expected inputs as well as exceptions to improve the programs robustness and reduce bugs. Additionally, every class in the program will include all the required import statements. Therefore, the unit tests will not require any stubs or drivers when testing individual methods or components that depend on multiple methods. In addition, coverage metrics will be used to determine how much of the implemented code was tested. The goal percentage to reach is 80\%. 
 		
 \subsection{Unit testing of output files}
 

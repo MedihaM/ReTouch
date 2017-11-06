@@ -52,10 +52,10 @@ public class Scheduler extends TimerTask {
 	 */
 	public static void displayTimer(Graphics g) throws IOException {
 		g.setColor(Color.GRAY);
-		g.setFont(new Font("Calibri", Font.BOLD, 35));
+		g.setFont(new Font("Calibri", Font.BOLD, 30));
 		g.drawString("Elapsed time: " + Integer.toString(elapsedTime) + "s", 30, 30);
 		g.drawString("Accuracy: " + Integer.toString(accuracy()) + "%", 20 + Lesson.width / 3, 30);
-		g.drawString("Characters/Minute: " + Integer.toString(counter()), 2 * Lesson.width / 3, 30);
+		g.drawString("Characters/Minute: " + Integer.toString(counter()), 2 * Lesson.width / 3 - 30, 30);
 	}
 
 	/**

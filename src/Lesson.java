@@ -1,11 +1,10 @@
-package se3XA3;
-
 /**
  * 
  * Based off of https://www.youtube.com/watch?v=I3usNR8JrEE
  */
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -26,22 +25,15 @@ public class Lesson extends JPanel implements ActionListener {
 
 	// Timer is the GUI version of sleep
 	Timer timer = new Timer(5, this); // this refers to actionlistener, 5 ms
-	int x = 0, velX = 2; // x is position of panel, velX is the speed of moving
-							// rectangle
 
 	/**
 	 * Draws the graphics on screen
 	 * 
 	 */
 	public void paintComponent(Graphics g) {
-		// super.paintComponent(g);
-
-		// Post an image
 		Graphics2D g2 = (Graphics2D) g;
-		// Image img1 = Toolkit.getDefaultToolkit().getImage("img/Pure
-		// Love.jpg");
-		// g2.drawImage(img1, 0, 0, null);
 
+		
 		// Create rectangle for background
 		g.setColor(Color.WHITE);
 		g2.finalize();
@@ -59,6 +51,7 @@ public class Lesson extends JPanel implements ActionListener {
 		}
 
 		timer.start(); // start the timer, and then actionlistener
+
 	}
 
 	/**
@@ -91,7 +84,8 @@ public class Lesson extends JPanel implements ActionListener {
 
 	/**
 	 * Create the JFrame and start the program
-	 * @throws IOException 
+	 * 
+	 * @throws IOException
 	 * 
 	 */
 	public static void main(String[] args) throws IOException {

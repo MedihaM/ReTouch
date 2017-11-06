@@ -1,5 +1,3 @@
-package se3XA3;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -15,7 +13,7 @@ public class DisplayCharacters {
 	public static void displayCharacters(Graphics g) throws IOException {
 		String[] s = Parser.getStringArr("asdf"); // move elsewhere so it
 													// doesn't repeat?
-		g.setFont(new Font("Calibri", Font.BOLD, 35));
+		g.setFont(new Font("Calibri", Font.PLAIN, 35));
 		int cs;
 		
 		for (int i = 0; i < UserInput.MAX_LINE; i++) {
@@ -45,7 +43,7 @@ public class DisplayCharacters {
 		int[] x = UserInput.getCurrentCharacter();
 		g.setFont(new Font("Calibri", Font.PLAIN, 40));
 		g.setColor(Color.BLUE);
-		g.drawString("|", x[1]*20 + 90, x[0]*40 + 100);
+		g.drawString("|", x[1]*20 + 91, x[0]*40 + 100);
 	}
 
 

@@ -84,31 +84,31 @@ public class SelectionPage extends javax.swing.JFrame {
         
         switch(chosen){
                 case ("all"): 
-                    UserInput.setUp();
+                    UserInput.setUp("all");
                     Scheduler.runTimer();
                     Lesson.makeJFrame();
                     dispose();
                     break;
                 case ("asdf"): 
-                    UserInput.setUp();
+                    UserInput.setUp("asdf");
                     Scheduler.runTimer();
                     Lesson.makeJFrame();
                     dispose();
                     break;
                 case ("cnsnts"): 
-                    UserInput.setUp();
+                    UserInput.setUp("cnsnts");
                     Scheduler.runTimer();
                     Lesson.makeJFrame();
                     dispose();
                     break;
                 case ("hjkl"): 
-                    UserInput.setUp();
+                    UserInput.setUp("hjkl");
                     Scheduler.runTimer();
                     Lesson.makeJFrame();
                     dispose();
                     break;
                 case ("vowels"): 
-                    UserInput.setUp();
+                    UserInput.setUp("vowels");
                     Scheduler.runTimer();
                     Lesson.makeJFrame();
                     dispose();

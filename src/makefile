@@ -5,7 +5,8 @@ CLASSES = \
         Scheduler.java\
 	Parser.java\
 	Lesson.java\
-	UserInput.java
+	UserInput.java\
+	SelectionPage.java
 
 all: classes
 

@@ -104,14 +104,14 @@ public class UserInput {
 	 * 
 	 * @throws IOException
 	 */
-	public static void setUp() throws IOException {
+	public static void setUp(String lesson) throws IOException {
 		for (int i = 0; i < MAX_LINE; i++) {
 			for (int j = 0; j < MAX_CHAR; j++) {
 				setCharStatus(i, j, 0); // Set all characters as
 										// untyped
 			}
 		}
-		stringArray = Parser.getStringArr("asdf");
+		stringArray = Parser.getStringArr(lesson);
 	}
 
 }

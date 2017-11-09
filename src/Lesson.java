@@ -88,9 +88,10 @@ public class Lesson extends JPanel implements ActionListener {
 	 * @throws IOException
 	 * 
 	 */
+        /*
 	public static void main(String[] args) throws IOException {
 		UserInput.setUp();
 		Scheduler.runTimer();
 		makeJFrame();
-	}
+	}*/
 }

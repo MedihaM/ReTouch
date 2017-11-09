@@ -1,3 +1,8 @@
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -44,7 +49,11 @@ public class SelectionPage extends javax.swing.JFrame {
         jButton1.setText("Select");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                try {
+                    jButton1ActionPerformed(evt);
+                } catch (IOException ex) {
+                    Logger.getLogger(SelectionPage.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -79,7 +88,7 @@ public class SelectionPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException{//GEN-FIRST:event_jButton1ActionPerformed
         String chosen = jComboBox1.getSelectedItem().toString();
         
         switch(chosen){

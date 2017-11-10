@@ -10,8 +10,11 @@ import java.util.logging.Logger;
  */
 
 /**
- *
- * @author susan
+ * The SelectionPage class constructs the initial UI page that allows the user to select which lesson they would
+ * like to complete. 
+ * @author Susan Fayez
+ * @version 1.0
+ * @since 2017-11-09
  */
 public class SelectionPage extends javax.swing.JFrame {
 
@@ -84,7 +87,11 @@ public class SelectionPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * This method makes the required pages in the case where any of the provided lessons is selected.
+     * @param evt An action event.
+     * @throws IOException On input error.
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton1ActionPerformed
         String chosen = jComboBox1.getSelectedItem().toString();
         
@@ -126,7 +133,7 @@ public class SelectionPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    /**
+    /**This is the main method of the class.
      * @param args the command line arguments
      */
     public static void main(String args[]) {

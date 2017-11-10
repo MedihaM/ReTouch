@@ -39,7 +39,7 @@ public class UserInput {
 	 * 
 	 * @param jf A frame component.
 	 */
-	public static void keyboardInput(JFrame jf) {
+	public static void keyboardInput(final JFrame jf) {
 		// Add the keyboard input option:
 		jf.addKeyListener(new KeyAdapter() {
 

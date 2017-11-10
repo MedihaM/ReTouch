@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -12,32 +13,42 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * The Scheduler class runs a timer as a user completes a lesson, and calculates as well as displays the accuracy, 
+ * speed, and time on the screen. 
+ * @author Mediha Munimm
+ * @version 1.0
+ * @since 2017-11-06
+ */
 public class Scheduler extends TimerTask {
 
 	static int elapsedTime = 0;
 	static Timer timer = new Timer(true);
 
+	/**
+	 * This method runs the completeTask method which increases the elapsed time.
+	 */
 	@Override
 	public void run() {
 		completeTask();
 	}
 
 	/**
-	 * Increases elapsed time by one every second.
+	 * This method increases the elapsed time by one every second.
 	 */
 	private void completeTask() {
 		elapsedTime++;
 	}
 
 	/**
-	 * Ends the timer
+	 * This method ends the timer.
 	 */
 	public static void endTimer() {
 		timer.cancel();
 	}
 
 	/**
-	 * Starts the timer
+	 * This method starts the timer.
 	 */
 	public static void runTimer() {
 		TimerTask timerTask = new Scheduler();
@@ -45,10 +56,10 @@ public class Scheduler extends TimerTask {
 	}
 
 	/**
-	 * Displays the user's lesson/typing information
+	 * This method displays the user's lesson/typing information.
 	 * 
-	 * @param g
-	 * @throws IOException
+	 * @param g A graphics object
+	 * @throws IOException On input error.
 	 */
 	public static void displayTimer(Graphics g) throws IOException {
 		g.setColor(Color.GRAY);
@@ -59,11 +70,9 @@ public class Scheduler extends TimerTask {
 	}
 
 	/**
-	 * Calculates and returns the (correctly typed) characters per second
+	 * This method calculates and returns the (correctly typed) characters per second.
 	 * 
-	 * @param c
-	 * @param t
-	 * @return the user's typing speed in characters per minute
+	 * @return int The user's typing speed in characters per minute.
 	 */
 	public static int counter() {
 		int cpm = UserInput.correctCharacters * 60 / elapsedTime;
@@ -71,9 +80,9 @@ public class Scheduler extends TimerTask {
 	}
 
 	/**
-	 * Calculates and returns the user's typing accuracy
+	 * This method calculates and returns the user's typing accuracy.
 	 * 
-	 * @return
+	 * @return int The user's typing accuracy as a percent.
 	 */
 	public static int accuracy() {
 		if (UserInput.correctCharacters + UserInput.incorrectCharacters > 0) {

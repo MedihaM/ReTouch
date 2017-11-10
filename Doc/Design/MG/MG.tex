@@ -68,45 +68,19 @@ November 10 & 1.2 & Notes\\
 
 \section{Introduction}
 
-Decomposing a system into modules is a commonly accepted approach to developing
-software.  A module is a work assignment for a programmer or programming
-team~\citep{ParnasEtAl1984}.  We advocate a decomposition
-based on the principle of information hiding~\citep{Parnas1972a}.  This
-principle supports design for change, because the ``secrets'' that each module
-hides represent likely future changes.  Design for change is valuable in SC,
-where modifications are frequent, especially during initial development as the
-solution space is explored.  
+\subsection{Overview}
+The ReTouch project is a re-implementation of the open source project K-Touch which allows users to track their speed and accuracy in typing, and results in improved typing skills through practice and repetition.
 
-Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
-\begin{itemize}
-\item System details that are likely to change independently should be the
-  secrets of separate modules.
-\item Each data structure is used in only one module.
-\item Any other program that requires information stored in a module's data
-  structures must obtain it by calling access programs belonging to that module.
-\end{itemize}
+\subsection{Context}
+The Module Guide document is created after the Software Requirements Specification (SRS) document. The purpose of this is to allow the project design to be based off a set structure of functional and non-functional requirements that are featured in the SRS. Therefore, this MG document is used to provide a modular decomposition of the system, and by following the SRS, all the featured modules and the system is ensured to meet the functional and non-functional requirements. Additionally, the Module Interface Specification (MIS) is created after the MG document which provides further detail on all the modules specified in the MG document. The MIS specifies the externally observable behavior and explains the semantics and syntax of the functions for each module in the system.
 
-After completing the first stage of the design, the Software Requirements
-Specification (SRS), the Module Guide (MG) is developed~\citep{ParnasEtAl1984}. The MG
-specifies the modular structure of the system and is intended to allow both
-designers and maintainers to easily identify the parts of the software.  The
-potential readers of this document are as follows:
+\subsection{Design Principles}
 
-\begin{itemize}
-\item New project members: This document can be a guide for a new project member
-  to easily understand the overall structure and quickly find the
-  relevant modules they are searching for.
-\item Maintainers: The hierarchical structure of the module guide improves the
-  maintainers' understanding when they need to make changes to the system. It is
-  important for a maintainer to update the relevant sections of the document
-  after changes have been made.
-\item Designers: Once the module guide has been written, it can be used to
-  check for consistency, feasibility and flexibility. Designers can verify the
-  system in various ways, such as consistency among modules, feasibility of the
-  decomposition, and flexibility of the design.
-\end{itemize}
+The Design Principles being used to guide the decomposition of the system into modules include Information Hiding which supports design for change, and the criteria that the modules have low coupling and high cohesion. The principle of Information Hiding allows for all expected changes to be identified and encapsulates each expected change. In other words, each modules secrets are hidden from the rest of the system and the module design interface will not change even if a a module's secret changes. Additionally, low-coupling would mean that the modules are independent and do not use one another. High cohesion within the modules would indicate that the elements of the module are strongly related. 
 
-The rest of the document is organized as follows. Section
+\subsection{Document Structure}
+
+This Module Guide document is organized as follows. Section
 \ref{SecChange} lists the anticipated and unlikely changes of the software
 requirements. Section \ref{SecMH} summarizes the module decomposition that
 was constructed according to the likely changes. Section \ref{SecConnection}
@@ -133,11 +107,14 @@ adapted here is called design for
 change.
 
 \begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
-  hardware on which the software is running.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
-  initial input data.
-\item ...
+\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific hardware on which the software is running.
+\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the initial input data.
+\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The Operating Systems of which the Software interfaces with.
+ \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the final output and display.
+ \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The graphical user interface elements used to display effects of user input.
+ \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The calculation methods for determining user speed and accuracy.
+  \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The number of lessons (and their contents) that can be selected by the user.
+   \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The precision of the timer and whether it should measure milliseconds.
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -150,11 +127,10 @@ will potentially need to be modified. Hence, it is not intended that these
 decisions will be changed.
 
 \begin{description}
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
-  (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] There will always be
-  a source of input data external to the software.
-\item ...
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] There will always be a source of input data external to the software.
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] The goal/purpose of the system: To assist users in enhancing their typing abilities by tracking their speed and accuracy when completing lessons. 
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] The methods and functions used to track whether inputted characters match the expected characters. 
 \end{description}
 
 \section{Module Hierarchy} \label{SecMH}
@@ -337,12 +313,7 @@ FREQ15 & M6, M7, M8\\
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
-In this section, the uses hierarchy between modules is
-provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
-correct execution of B may be necessary for A to complete the task described in
-its specification. That is, A {\em uses} B if there exist situations in which
-the correct functioning of A depends upon the availability of a correct
-implementation of B.  Figure \ref{FigUH} illustrates the use relation between
+Figure \ref{FigUH} illustrates the use relation between
 the modules. It can be seen that the graph is a directed acyclic graph
 (DAG). Each level of the hierarchy offers a testable and usable subset of the
 system, and modules in the higher level of the hierarchy are essentially simpler
@@ -350,7 +321,7 @@ because they use modules from the lower levels.
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}

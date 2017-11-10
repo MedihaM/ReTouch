@@ -1,57 +1,93 @@
+
+/**
+ * 
+ * Based off of https://www.youtube.com/watch?v=I3usNR8JrEE
+ */
+
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
-public class makeResults extends JPanel {
-	
-	  static int width = 1200, height = 800;
+/**
+ * The Lesson class constructs the UI page that displays the lesson characters and accepts user input.
+ * @author Mediha Munimm
+ * @version 1.0
+ * @since 2017-11-06
+ *
+ */
+public class Lesson extends JPanel implements ActionListener {
+
+	// Dimensions of the page
+	static int width = 1200, height = 800;
+
+	// Timer is the GUI version of sleep
+	Timer timer = new Timer(5, this); // this refers to actionlistener, 5 ms
+
+	/**
+	 * This method draws the graphics on the screen.
+	 */
+	public void paintComponent(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+
 		
-		public static void makeR() {
-			makeResults mr = new makeResults();
-			JFrame jf2 = new JFrame();
+		// Create rectangle for background
+		g.setColor(Color.WHITE);
+		g2.finalize();
+		g.fillRect(0, 0, width, height);
 
-			// Create the screen
-			jf2.setSize(makeResults.width, makeResults.height);
-			jf2.setTitle("ReTouch Lesson Results");
-			
-			JPanel panel = new JPanel();
-			JLabel jlabel = new JLabel("CONGRATULATIONS! You have completed the lesson! Here are your results:");
-			jlabel.setFont(new Font("Serif", Font.PLAIN, 14));
-			panel.add(jlabel);
-			jf2.add(panel);
-			
-			jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			jf2.add(mr);
-			jf2.setVisible(true);
-	    }
-	  
-	    /**
-		 * Draws the graphics on screen
-		 * 
-		 */
-		public void paintComponent(Graphics g) {
-			Graphics2D g2 = (Graphics2D) g;
+		try {
+			// Display characters
+			DisplayCharacters.displayCharacters(g);
+			DisplayCharacters.displayCurrentCharacter(g);
 
-			// Create rectangle for background
-			g2.setColor(Color.WHITE);
-			g2.finalize();
-			g.fillRect(0, 0, width, height);
-			
-			g2.setColor(Color.BLACK);
-			
-			g2.setFont(new Font("Arial", Font.PLAIN, 24)); 
-			g2.drawString("CONGRATULATIONS! You have completed the lesson! Here are your results:", 60, 60);
-			
-			g.drawString("Elapsed time: " + Integer.toString(Scheduler.elapsedTime) + "s", 150, 150);
-			g.drawString("Accuracy: " + Integer.toString(Scheduler.accuracy()) + "%", 20 + Lesson.width / 3, 150);
-			g.drawString("Characters/Minute: " + Integer.toString(Scheduler.counter()), 2 * Lesson.width / 3 - 30, 150);
+			// Show timer
+			Scheduler.displayTimer(g);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+
+		timer.start(); // start the timer, and then actionlistener
+
+	}
+
+	/**
+	 * This method describes what needs to change each frame.
+	 * 
+	 */
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		repaint(); // repaints every 5ms
+	}
+
+	/**
+	 * This method creates the graphical user interface.
+	 */
+	public static void makeJFrame() {
+		Lesson t = new Lesson();
+		JFrame jf = new JFrame();
+
+		// Accept keyboard input
+		UserInput.keyboardInput(jf);
+
+		// Create the screen
+		jf.setSize(Lesson.width, Lesson.height);
+		jf.setTitle("ReTouch");
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.add(t);
+		jf.setVisible(true);
+
+	}
 
 }

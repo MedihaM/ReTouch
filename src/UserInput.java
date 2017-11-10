@@ -60,7 +60,8 @@ public class UserInput {
 					if (typedChar == KeyEvent.VK_ENTER && firstIncorrectChar < 0) {
 						// If the last character of the last line is reached: Indicate that the program is done
 						if (currentCharacter[0] == MAX_LINE -1){
-							System.exit(0);
+							new Results();
+							jf.dispose();
 							
 						}
 						currentCharacter[1] = 0;

@@ -55,8 +55,8 @@ public class makeResults extends JPanel {
 			
 			// Displays the users final results on the screen
 			g.drawString("Elapsed time: " + Integer.toString(Scheduler.elapsedTime) + "s", 150, 150);
-			g.drawString("Accuracy: " + Integer.toString(Scheduler.accuracy()) + "%", 20 + Lesson.width / 3, 150);
-			g.drawString("Characters/Minute: " + Integer.toString(Scheduler.counter()), 2 * Lesson.width / 3 - 30, 150);
+			g.drawString("Accuracy: " + Integer.toString(Scheduler.accuracy()) + "%", 20 + makeResults.width / 3, 150);
+			g.drawString("Characters/Minute: " + Integer.toString(Scheduler.counter()), 2 * makeResults.width / 3 - 30, 150);
 		}
 
 }

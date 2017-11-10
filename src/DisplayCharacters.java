@@ -7,9 +7,22 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 import java.io.IOException;
 
+/**
+ * The DisplayCharacters class alters the display properties (colour, font) of the characters that the 
+ * user inputs.
+ * @author Mediha Munimm
+ * @version 1.0
+ * @since 2017-11-06
+ *
+ */
 public class DisplayCharacters {
 
-
+	/**
+	 * This method alters the colour of the character depending on whether a correct or incorrect
+	 * character was inputed.
+	 * @param g A graphics object.
+	 * @throws IOException On input error.
+	 */
 	public static void displayCharacters(Graphics g) throws IOException {
 		String[] s = Parser.getStringArr("asdf"); // move elsewhere so it
 													// doesn't repeat?
@@ -35,9 +48,9 @@ public class DisplayCharacters {
 	}
 	
 	/**
-	 * Displays the line indicating the current character
-	 * @param g
-	 * @throws IOException
+	 * This method displays the line indicating the current character.
+	 * @param g A graphics object.
+	 * @throws IOException On input error.
 	 */
 	public static void displayCurrentCharacter(Graphics g) throws IOException {
 		int[] x = UserInput.getCurrentCharacter();

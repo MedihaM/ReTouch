@@ -1,9 +1,16 @@
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import javax.swing.JFrame;
 
+/**
+ * The UserInput class accepts user input and compares all the inputed characters to the characters in the lesson.
+ * @author Mediha Munimm
+ * @version 1.0
+ * @since 2017-11-06
+ */
 public class UserInput {
 
 	static String[] stringArray = new String[7];
@@ -28,9 +35,9 @@ public class UserInput {
 	// 2 if it has been typed incorrectly
 
 	/**
-	 * Manages user input and compares it to the expected character.
+	 * This method manages user input and compares it to the expected character.
 	 * 
-	 * @param jf
+	 * @param jf A frame component.
 	 */
 	public static void keyboardInput(JFrame jf) {
 		// Add the keyboard input option:
@@ -88,22 +95,39 @@ public class UserInput {
 
 	}
 
+	/**
+	 * This method sets the status of the current character.
+	 * @param line The current line.
+	 * @param c The current character.
+	 * @param value The new value of the character.
+	 */
 	public static void setCharStatus(int line, int c, int value) {
 		charStatus[line][c] = value;
 	}
 
+	/**
+	 * This method retrieves the status of the current character.
+	 * @param line The current line.
+	 * @param c The current character.
+	 * @return int The value of the character.
+	 */
 	public static int getCharStatus(int line, int c) {
 		return charStatus[line][c];
 	}
 
+	/**
+	 * This method returns the position of the current integer / character.
+	 * @return int[] The position of the character.
+	 */
 	public static int[] getCurrentCharacter() {
 		return currentCharacter;
 	}
-
+	
 	/**
-	 * Initialization of the characters
+	 * This method initializes the characters.
 	 * 
-	 * @throws IOException
+	 * @param lesson The lesson that has been selected by the user parsed into a string.
+	 * @throws IOException On input error.
 	 */
 	public static void setUp(String lesson) throws IOException {
 		for (int i = 0; i < MAX_LINE; i++) {

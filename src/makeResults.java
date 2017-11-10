@@ -9,10 +9,20 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * The makeResults class constructs the UI page that displays the user's results of the selected lesson.
+ * @author Abrar Attia
+ * @version 1.0
+ * @since 2017-11-09
+ */
 public class makeResults extends JPanel {
 	
+	// Dimensions of the page
 	  static int width = 1200, height = 800;
 		
+	  /**
+	   * This method creates the graphical user interface.
+	   */
 		public static void makeR() {
 			makeResults mr = new makeResults();
 			JFrame jf2 = new JFrame();
@@ -21,20 +31,13 @@ public class makeResults extends JPanel {
 			jf2.setSize(makeResults.width, makeResults.height);
 			jf2.setTitle("ReTouch Lesson Results");
 			
-			JPanel panel = new JPanel();
-			JLabel jlabel = new JLabel("CONGRATULATIONS! You have completed the lesson! Here are your results:");
-			jlabel.setFont(new Font("Serif", Font.PLAIN, 14));
-			panel.add(jlabel);
-			jf2.add(panel);
-			
 			jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			jf2.add(mr);
 			jf2.setVisible(true);
 	    }
 	  
 	    /**
-		 * Draws the graphics on screen
-		 * 
+		 * This method draws the graphics on screen and displays the results
 		 */
 		public void paintComponent(Graphics g) {
 			Graphics2D g2 = (Graphics2D) g;
@@ -44,11 +47,13 @@ public class makeResults extends JPanel {
 			g2.finalize();
 			g.fillRect(0, 0, width, height);
 			
+			// Sets the properties of the text font
 			g2.setColor(Color.BLACK);
-			
 			g2.setFont(new Font("Arial", Font.PLAIN, 24)); 
+			// Displays a message on the screen
 			g2.drawString("CONGRATULATIONS! You have completed the lesson! Here are your results:", 60, 60);
 			
+			// Displays the users final results on the screen
 			g.drawString("Elapsed time: " + Integer.toString(Scheduler.elapsedTime) + "s", 150, 150);
 			g.drawString("Accuracy: " + Integer.toString(Scheduler.accuracy()) + "%", 20 + Lesson.width / 3, 150);
 			g.drawString("Characters/Minute: " + Integer.toString(Scheduler.counter()), 2 * Lesson.width / 3 - 30, 150);

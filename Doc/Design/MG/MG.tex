@@ -38,7 +38,7 @@
 		\\ Mediha Munim - munimm
 }
 
-\date{\today}
+\date{November 10, 2017}
 
 \begin{document}
 
@@ -54,9 +54,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-November 10 & 1.0 & Added Mdoule Hierarchy\\
+November 10 & 1.0 & Added Module Hierarchy\\
 November 10 & 1.1 & Added Tracability Matrix between Modules and Requirments\\
-November 10 & 1.2 & Notes\\
+November 10 & 1.2 & Added Module Decomposition and Requirements/Design Connections\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -72,11 +72,11 @@ November 10 & 1.2 & Notes\\
 The ReTouch project is a re-implementation of the open source project K-Touch which allows users to track their speed and accuracy in typing, and results in improved typing skills through practice and repetition.
 
 \subsection{Context}
-The Module Guide document is created after the Software Requirements Specification (SRS) document. The purpose of this is to allow the project design to be based off a set structure of functional and non-functional requirements that are featured in the SRS. Therefore, this MG document is used to provide a modular decomposition of the system, and by following the SRS, all the featured modules and the system is ensured to meet the functional and non-functional requirements. Additionally, the Module Interface Specification (MIS) is created after the MG document which provides further detail on all the modules specified in the MG document. The MIS specifies the externally observable behavior and explains the semantics and syntax of the functions for each module in the system.
+The Module Guide document is created after the Software Requirements Specification (SRS) document. The purpose of this is to allow the project design to be based off a set structure of functional and non-functional requirements that are featured in the SRS. Therefore, this MG document is used to provide a modular decomposition of the system, and by following the SRS, all the featured modules and the system is ensured to meet the functional and non-functional requirements. Additionally, the Module Interface Specification (MIS) is created after the MG document which provides further details on all the modules specified in the MG document. The MIS specifies the externally observable behavior and explains the semantics and syntax of the functions for each module in the system.
 
 \subsection{Design Principles}
 
-The Design Principles being used to guide the decomposition of the system into modules include Information Hiding which supports design for change, and the criteria that the modules have low coupling and high cohesion. The principle of Information Hiding allows for all expected changes to be identified and encapsulates each expected change. In other words, each modules secrets are hidden from the rest of the system and the module design interface will not change even if a a module's secret changes. Additionally, low-coupling would mean that the modules are independent and do not use one another. High cohesion within the modules would indicate that the elements of the module are strongly related. 
+The Design Principles being used to guide the decomposition of the system into modules include Information Hiding which supports design for change, and the criteria that the modules have low coupling and high cohesion. The principle of Information Hiding allows for all expected changes to be identified and encapsulates each expected change. In other words, all module secrets are hidden from the rest of the system and the module design interface will not change even if a a module's secret changes. Additionally, low-coupling would mean that the modules are independent and do not use one another. High cohesion within the modules would indicate that the elements of the module are strongly related. 
 
 \subsection{Document Structure}
 
@@ -109,12 +109,12 @@ change.
 \begin{description}
 \item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific hardware on which the software is running.
 \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the initial input data.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The Operating Systems of which the Software interfaces with.
- \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the final output and display.
- \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The graphical user interface elements used to display effects of user input.
- \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The calculation methods for determining user speed and accuracy.
-  \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The number of lessons (and their contents) that can be selected by the user.
-   \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The precision of the timer and whether it should measure milliseconds.
+\item[\refstepcounter{acnum} \actheacnum \label{acOS}:] The Operating Systems of which the Software interfaces with.
+ \item[\refstepcounter{acnum} \actheacnum \label{acFinalOutput}:] The format of the final output and display.
+ \item[\refstepcounter{acnum} \actheacnum \label{acGUI}:] The graphical user interface elements used to display effects of user input.
+ \item[\refstepcounter{acnum} \actheacnum \label{acCalculations}:] The calculation methods for determining user speed and accuracy.
+  \item[\refstepcounter{acnum} \actheacnum \label{acLessons}:] The number of lessons (and their contents) that can be selected by the user.
+   \item[\refstepcounter{acnum} \actheacnum \label{acTimer}:] The precision of the timer and whether it should measure milliseconds.
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -142,14 +142,14 @@ actually be implemented.
 
 \begin{description}
 \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Display Characters Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Lesson Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Parser Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Selection Page Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] User Input Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Make Results Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Results Module
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Scheduler Module
+\item [\refstepcounter{mnum} \mthemnum \label{mDC}:] Display Characters Module
+\item [\refstepcounter{mnum} \mthemnum \label{mL}:] Lesson Module
+\item [\refstepcounter{mnum} \mthemnum \label{mP}:] Parser Module
+\item [\refstepcounter{mnum} \mthemnum \label{mSP}:] Selection Page Module
+\item [\refstepcounter{mnum} \mthemnum \label{mUI}:] User Input Module
+\item [\refstepcounter{mnum} \mthemnum \label{mMR}:] Make Results Module
+\item [\refstepcounter{mnum} \mthemnum \label{mR}:] Results Module
+\item [\refstepcounter{mnum} \mthemnum \label{mS}:] Scheduler Module
 \end{description}
 
 
@@ -187,23 +187,10 @@ between requirements and modules is listed in Table \ref{TblRT}.
 
 \section{Module Decomposition} \label{SecMD}
 
-Modules are decomposed according to the principle of ``information hiding''
-proposed by \citet{ParnasEtAl1984}. The \emph{Secrets} field in a module
-decomposition is a brief statement of the design decision hidden by the
-module. The \emph{Services} field specifies \emph{what} the module will do
-without documenting \emph{how} to do it. For each module, a suggestion for the
-implementing software is given under the \emph{Implemented By} title. If the
-entry is \emph{OS}, this means that the module is provided by the operating
-system or by standard programming language libraries.  Also indicate if the
-module will be implemented specifically for the software.
 
-Only the leaf modules in the
-hierarchy have to be implemented. If a dash (\emph{--}) is shown, this means
-that the module is not a leaf and will not have to be implemented. Whether or
-not this module is implemented depends on the programming language
-selected.
+All of the modules in the creation of ReTouch were decomposed with Information Hiding in mind. With this system, each module carries one secret and has a set of functions (services). This section examines each module, defining its secret and the services/functions it provides.
 
-\subsection{Hardware Hiding Modules (\mref{mHH})}
+\subsection{Hardware Hiding Module (\mref{mHH})}
 
 \begin{description}
 \item[Secrets:]The data structure and algorithm used to implement the virtual
@@ -214,44 +201,84 @@ selected.
 \item[Implemented By:] OS
 \end{description}
 
-\subsection{Behaviour-Hiding Module}
+\subsection{Behaviour-Hiding Modules}
+
+
+\subsubsection{Display Characters Module (\mref{mDC})}
 
 \begin{description}
-\item[Secrets:]The contents of the required behaviours.
-\item[Services:]Includes programs that provide externally visible behaviour of
-  the system as specified in the software requirements specification (SRS)
-  documents. This module serves as a communication layer between the
-  hardware-hiding module and the software decision module. The programs in this
-  module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
+\item[Secrets:]The GUI elements used to structure and display the characters.
+\item[Services:]Displays the characters in the lesson on screen and updates their colour, as well as displaying the current character.
+\item[Implemented By:] ReTouch
 \end{description}
 
-\subsubsection{Input Format Module (\mref{mInput})}
+
+\subsubsection{Lesson Module (\mref{mL})}
+
+\begin{description}
+\item[Secrets:]The data structure used to construct the character input UI page.
+\item[Services:]Constructs the UI page that displays the lesson characters and accepts user input.
+\item[Implemented By:] ReTouch
+\end{description}
+
+
+\subsubsection{Parser Module (\mref{mP})}
 
 \begin{description}
 \item[Secrets:]The format and structure of the input data.
 \item[Services:]Converts the input data into the data structure used by the
   input parameters module.
-\item[Implemented By:] [Your Program Name Here]
+\item[Implemented By:] ReTouch
 \end{description}
 
-\subsubsection{Etc.}
 
-
-\subsection{Software Decision Module}
+\subsubsection{Selection Page Module (\mref{mSP})}
 
 \begin{description}
-\item[Secrets:] The design decision based on mathematical theorems, physical
-  facts, or programming considerations. The secrets of this module are
-  \emph{not} described in the SRS.
-\item[Services:] Includes data structure and algorithms used in the system that
-  do not provide direct interaction with the user. 
-  % Changes in these modules are more likely to be motivated by a desire to
-  % improve performance than by externally imposed changes.
+\item[Secrets:]The data structure used to construct the selection page UI.
+\item[Services:]Constructs the UI page that displays that allows users to select a lesson.
+\item[Implemented By:] ReTouch
+\end{description}
+
+
+\subsubsection{User Input Module (\mref{mUI})}
+
+\begin{description}
+\item[Secrets:]The algorithms used to handle user input.
+\item[Services:]Handles user input by comparing all the inputted characters to the characters in the lesson.
+\item[Implemented By:] ReTouch
+\end{description}
+
+
+\subsection{Software Decision Modules}
+
+
+\subsubsection{Make Results Module (\mref{mMR})}
+
+\begin{description}
+\item[Secrets:] The algorithm that produces the information for a results GUI component.
+\item[Services:] Compiles the results of the lesson into a GUI.
 \item[Implemented By:] --
 \end{description}
 
-\subsubsection{Etc.}
+
+\subsubsection{Results Module (\mref{mR})}
+
+\begin{description}
+\item[Secrets:] The algorithm that produces/displays a GUI component.
+\item[Services:] Displays the results of the lesson.
+\item[Implemented By:] --
+\end{description}
+
+
+\subsubsection{Scheduler Module (\mref{mS})}
+
+\begin{description}
+\item[Secrets:] The processes that calculate the mathematical formulas used in the lesson.
+\item[Services:] Calculates and displays the calculated parts of the lesson.
+\item[Implemented By:] --
+\end{description}
+
 
 \section{Traceability Matrix} \label{SecTM}
 
@@ -266,26 +293,27 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-FREQ1 & M5\\
-FREQ2 & M4, M5\\
-FREQ3 & M2, M3, M5\\
-FREQ4 & M2, M6\\
-FREQ5 & M2, M6\\
-FREQ6 & M2, M6\\
-FREQ7 & M2, M6\\
-FREQ8 & M2, M6\\
-FREQ9 & M2, M6\\
-FREQ10 & M6\\
-FREQ11 & M3, M9\\
-FREQ12 & M3, M9\\
-FREQ13 & M3, M9\\
-FREQ14 & M6\\
-FREQ15 & M6, M7, M8\\
+FREQ1 & \mref{mSP}\\
+FREQ2 & \mref{mP}, \mref{mSP}\\
+FREQ3 & \mref{mDC}, \mref{mL}, \mref{mSP}\\
+FREQ4 & \mref{mDC}, \mref{mUI}\\
+FREQ5 & \mref{mDC}, \mref{mUI}\\
+FREQ6 & \mref{mDC}, \mref{mUI}\\
+FREQ7 & \mref{mDC}, \mref{mUI}\\
+FREQ8 & \mref{mDC}, \mref{mUI}\\
+FREQ9 & \mref{mDC}, \mref{mUI}\\
+FREQ10 & \mref{mUI}\\
+FREQ11 & \mref{mL}, \mref{mS}\\
+FREQ12 & \mref{mL}, \mref{mS}\\
+FREQ13 & \mref{mL}, \mref{mS}\\
+FREQ14 & \mref{mUI}\\
+FREQ15 & \mref{mUI}, \mref{mMR}, \mref{mR}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
 \label{TblRT}
 \end{table}
+
 
 \begin{table}[H]
 \centering
@@ -294,17 +322,13 @@ FREQ15 & M6, M7, M8\\
 \textbf{AC} & \textbf{Modules}\\
 \midrule
 \acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+\acref{acInput} & \mref{mP}\\
+\acref{acOS} & \mref{mL}\\
+\acref{acFinalOutput} & \mref{mMR}, \mref{mR}\\
+\acref{acGUI} & \mref{mDC}, \mref{mUI}, \mref{mS}\\
+\acref{acCalculations} & \mref{mS}, \mref{mUI}\\
+\acref{acLessons} & \mref{mL}, \mref{mSP} \\
+\acref{acTimer} & \mref{mSP}, \mref{mMR}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}

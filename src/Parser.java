@@ -50,19 +50,7 @@ public class Parser {
 			e.printStackTrace();
 		}
 	}
-	
-	/**
-	 * This method checks if the string is empty, and if so reads the file. 
-	 * @param filename The file to be read.
-	 * @return String The file contents as a string.
-	 * @throws IOException On input error.
-	 */
-	public static String getString(String filename) throws IOException{
-		if (realString == null){
-			makeString(filename);
-		}
-		return realString;
-	}
+
 	
 	/**
 	 * This method checks if the initial line in the file was inputed in the string array as a string.
@@ -71,6 +59,7 @@ public class Parser {
 	 * @throws IOException On input error.
 	 */
 	public static String[] getStringArr(String filename) throws IOException{
+		
 		if (stringArr[0] == null){
 			makeString(filename);
 		}

@@ -3,6 +3,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,12 +20,24 @@ import java.util.logging.Logger;
  * @since 2017-11-09
  */
 public class SelectionPage extends javax.swing.JFrame {
+	
+	// Buttons for changing and restarting a lesson
+	private JButton newL = new JButton("Open Lesson");
+	private JButton reL = new JButton("Restart");
 
     /**
      * Creates new form SelectionPage
      */
     public SelectionPage() {
         initComponents();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        newL.addActionListener(new ButtonListener(this));
+        newL.setActionCommand("back");
+        reL.addActionListener(new ButtonListener(this));
+        reL.setActionCommand("restart");
+        add(newL);
+        
+        setVisible(true);
     }
 
     /**

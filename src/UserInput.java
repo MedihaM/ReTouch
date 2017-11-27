@@ -1,9 +1,12 @@
 
+import java.awt.BorderLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * The UserInput class accepts user input and compares all the inputed characters to the characters in the lesson.
@@ -40,6 +43,7 @@ public class UserInput {
 	 * @param jf A frame component.
 	 */
 	public static void keyboardInput(final JFrame jf) {
+		
 		// Add the keyboard input option:
 		jf.addKeyListener(new KeyAdapter() {
 
@@ -92,7 +96,6 @@ public class UserInput {
 			}
 
 		});
-
 	}
 
 	/**

@@ -4,7 +4,9 @@
  * Based off of https://www.youtube.com/watch?v=I3usNR8JrEE
  */
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -16,6 +18,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
+import javax.print.DocFlavor.STRING;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -28,6 +32,9 @@ import javax.swing.Timer;
  *
  */
 public class Lesson extends JPanel implements ActionListener {
+	
+	// Button for trying a different lesson
+	private static JButton newL = new JButton("Try a Different Lesson");
 
 	// Dimensions of the page
 	static int width = 1200, height = 800;
@@ -77,7 +84,10 @@ public class Lesson extends JPanel implements ActionListener {
 	public static void makeJFrame() {
 		Lesson t = new Lesson();
 		JFrame jf = new JFrame();
-
+		// Panel on page with button
+		JPanel panel = new JPanel();
+		panel.add(newL);
+		
 		// Accept keyboard input
 		UserInput.keyboardInput(jf);
 
@@ -85,9 +95,15 @@ public class Lesson extends JPanel implements ActionListener {
 		jf.setSize(Lesson.width, Lesson.height);
 		jf.setTitle("ReTouch");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jf.add(t);
+		jf.add(t, BorderLayout.CENTER);
+		// Button position and function
+		newL.addActionListener(new ButtonListener(jf));
+		newL.setActionCommand("back");
+		newL.setFocusable(false);
+		jf.add(panel, BorderLayout.SOUTH);
 		jf.setVisible(true);
 
 	}
+	
 
 }

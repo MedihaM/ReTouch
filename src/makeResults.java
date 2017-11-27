@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -5,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.io.IOException;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,6 +19,9 @@ import javax.swing.JPanel;
  */
 public class makeResults extends JPanel {
 	
+	// Button made to select a new lesson
+	private static JButton restartL = new JButton("Try Another Lesson!");
+	
 	// Dimensions of the page
 	  static int width = 1200, height = 800;
 		
@@ -26,6 +31,9 @@ public class makeResults extends JPanel {
 		public static void makeR() {
 			makeResults mr = new makeResults();
 			JFrame jf2 = new JFrame();
+			// Panel with button
+			JPanel panel = new JPanel();
+			panel.add(restartL);
 
 			// Create the screen
 			jf2.setSize(makeResults.width, makeResults.height);
@@ -33,6 +41,10 @@ public class makeResults extends JPanel {
 			
 			jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			jf2.add(mr);
+			// Button position and function
+			restartL.addActionListener(new ButtonListener(jf2));
+			restartL.setActionCommand("restart");
+			jf2.add(panel, BorderLayout.SOUTH);
 			jf2.setVisible(true);
 	    }
 	  

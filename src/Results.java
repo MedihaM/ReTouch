@@ -27,7 +27,7 @@ public class Results extends JFrame implements ActionListener {
 	 * Calls the makeReults method makeR which creates the final results UI page.
 	 */
     public Results() {
-    	makeResults.makeR();
+    	MakeResults.makeR();
     }
    
     /**

@@ -6,7 +6,13 @@ CLASSES = \
 	Parser.java\
 	Lesson.java\
 	UserInput.java\
-	SelectionPage.java
+	SelectionPage.java\
+	MakeResults.java\
+	Results.java\
+	ButtonListener.java\
+	StartPage.java
+
+
 
 all: classes
 

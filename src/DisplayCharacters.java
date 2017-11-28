@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.image.ImageObserver;
 import java.io.IOException;
 
 /**
@@ -24,24 +23,50 @@ public class DisplayCharacters {
 	 * @throws IOException On input error.
 	 */
 	public static void displayCharacters(Graphics g) throws IOException {
-		String[] s = Parser.getStringArr("asdf"); // move elsewhere so it
-													// doesn't repeat?
-		g.setFont(new Font("Calibri", Font.PLAIN, 35));
+		Graphics2D g2 = (Graphics2D) g;
+		String[] s = Parser.getStringArr(); 
+		g.setFont(new Font("Monospaced", Font.BOLD, 35));
 		int cs;
-		
+
+		Image imgENTER = Toolkit.getDefaultToolkit().getImage("img/ENTER.png");
+		Image imgBACK = Toolkit.getDefaultToolkit().getImage("img/BACKSPACE.png");
+
 		for (int i = 0; i < UserInput.MAX_LINE; i++) {
 			for (int j = 0; j + 1 < UserInput.MAX_CHAR; j++) {
-				cs = UserInput.getCharStatus(i,j);
+				cs = UserInput.getCharStatus(i, j);
 
 				if (cs == 1) { // If character is typed/correct
+
+					// If at the end of a line
+					if (UserInput.getCurrentCharacter()[1] == 49) {
+						// Put the enter button:
+						g.setFont(new Font("default", Font.PLAIN, 35));
+						g.setColor(Color.BLACK);
+						g.drawString("PRESS", Lesson.width / 2 - 58, Lesson.height * 33 / 50);
+						g2.drawImage(imgENTER, Lesson.width / 2 - 100, Lesson.height * 2 / 3, null);
+						g.setFont(new Font("Monospaced", Font.BOLD, 35));
+
+					}
 					g.setColor(Color.GRAY);
+
 				} else if (cs == 0) { // If character is untyped
 					g.setColor(Color.BLACK);
 				} else {
+
+					// Put the backspace button:
+					g.setColor(Color.BLACK);
+					g.setFont(new Font("default", Font.PLAIN, 35));
+					g.drawString("PRESS", Lesson.width / 2 - 58, Lesson.height * 33 / 50);
+					
+					g2.drawImage(imgBACK, Lesson.width / 2 - 100, Lesson.height * 2 / 3, null);
+
+					g.setFont(new Font("Monospaced", Font.BOLD, 35));
 					g.setColor(Color.RED); // If the character is
-											// typed/incorrect
+					// typed/incorrect
+
 				}
-				g.drawString(s[i].substring(j, j + 1), j * 20 + 100, i * 40 + 100);
+
+				g.drawString(s[i].substring(j, j + 1), j * 20 + 100, i * 40 + 200);
 
 			}
 		}
@@ -54,9 +79,9 @@ public class DisplayCharacters {
 	 */
 	public static void displayCurrentCharacter(Graphics g) throws IOException {
 		int[] x = UserInput.getCurrentCharacter();
-		g.setFont(new Font("Calibri", Font.PLAIN, 40));
+		g.setFont(new Font("Default", Font.PLAIN, 40));
 		g.setColor(Color.BLUE);
-		g.drawString("|", x[1]*20 + 91, x[0]*40 + 100);
+		g.drawString("|", x[1] * 20 + 90, x[0] * 40 + 200);
 	}
 
 

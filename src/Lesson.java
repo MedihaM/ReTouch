@@ -5,17 +5,13 @@
  */
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import javax.print.DocFlavor.STRING;
@@ -48,11 +44,8 @@ public class Lesson extends JPanel implements ActionListener {
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 
-		
-		// Create rectangle for background
-		g.setColor(Color.WHITE);
-		g2.finalize();
-		g.fillRect(0, 0, width, height);
+		Image img1 = Toolkit.getDefaultToolkit().getImage("img/BG.jpg");
+		g2.drawImage(img1, -5, 0, null);
 
 		try {
 			// Display characters

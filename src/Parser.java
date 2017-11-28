@@ -53,7 +53,7 @@ public class Parser {
 
 	
 	/**
-	 * This method checks if the initial line in the file was inputed in the string array as a string.
+	 * This method checks if the initial line in the file was inputed in the string array as a string. If it has not been initialized, the string array will be initialized.
 	 * @param filename The file to be read and parsed through.
 	 * @return String The contents of the file.
 	 * @throws IOException On input error.
@@ -65,5 +65,14 @@ public class Parser {
 		}
 		return stringArr;
 	}	
+
+	/**
+	 * This method returns the string array regardless of what it is composed of.
+	 * @return String The contents of the file.
+	 * @throws IOException On input error.
+	 */
+	public static String[] getStringArr() throws IOException{
+		return stringArr;
+	}
 
 }

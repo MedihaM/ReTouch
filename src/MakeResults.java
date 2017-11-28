@@ -8,7 +8,6 @@ import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -17,6 +16,7 @@ import javax.swing.JPanel;
  * @version 1.0
  * @since 2017-11-09
  */
+ @SuppressWarnings("serial")
 public class MakeResults extends JPanel {
 	
 	// Button made to select a new lesson

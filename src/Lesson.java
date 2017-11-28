@@ -1,11 +1,9 @@
-
 /**
  * 
  * Based off of https://www.youtube.com/watch?v=I3usNR8JrEE
  */
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -14,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-import javax.print.DocFlavor.STRING;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -28,6 +25,8 @@ import javax.swing.Timer;
  *
  */
 public class Lesson extends JPanel implements ActionListener {
+	
+	private static final long serialVersionUID = 1L;
 	
 	// Button for trying a different lesson
 	private static JButton newL = new JButton("Try a Different Lesson");

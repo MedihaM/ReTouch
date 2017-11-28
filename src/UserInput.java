@@ -1,12 +1,8 @@
-
-import java.awt.BorderLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  * The UserInput class accepts user input and compares all the inputed characters to the characters in the lesson.

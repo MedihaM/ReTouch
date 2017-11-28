@@ -1,18 +1,7 @@
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.border.LineBorder;
 
 /**
  * The Results class allows the makeResults class to be called and assists in the creation of the final results page.
@@ -21,6 +10,7 @@ import javax.swing.border.LineBorder;
  * @since 2017-11-09
  *
  */
+ @SuppressWarnings("serial")
 public class Results extends JFrame implements ActionListener {
     
 	/**

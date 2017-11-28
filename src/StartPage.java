@@ -35,7 +35,7 @@ public class StartPage extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Welcome to Retouch!");
+        jLabel1.setText("Welcome to ReTouch!");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Developed by: Abrar Attia, Mediha Munim, and Susan Fayez");

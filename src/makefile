@@ -12,9 +12,10 @@ CLASSES = \
 	ButtonListener.java\
 	StartPage.java
 
-
-
 all: classes
+
+start: all
+	java StartPage
 
 classes:
 	$(JC) $(JFLAGS) $(CLASSES)

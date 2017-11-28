@@ -81,7 +81,7 @@ public class DisplayCharacters {
 		int[] x = UserInput.getCurrentCharacter();
 		g.setFont(new Font("Default", Font.PLAIN, 40));
 		g.setColor(Color.BLUE);
-		g.drawString("|", x[1] * 20 + 91, x[0] * 40 + 200);
+		g.drawString("|", x[1] * 20 + 93, x[0] * 40 + 200);
 	}
 
 

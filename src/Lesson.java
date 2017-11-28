@@ -24,9 +24,8 @@ import javax.swing.Timer;
  * @since 2017-11-06
  *
  */
+ @SuppressWarnings("serial")
 public class Lesson extends JPanel implements ActionListener {
-	
-	private static final long serialVersionUID = 1L;
 	
 	// Button for trying a different lesson
 	private static JButton newL = new JButton("Try a Different Lesson");

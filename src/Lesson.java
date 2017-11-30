@@ -4,6 +4,9 @@
  */
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -26,10 +29,10 @@ import javax.swing.Timer;
  */
  @SuppressWarnings("serial")
 public class Lesson extends JPanel implements ActionListener {
-	
+	 
 	// Button for trying a different lesson
 	private static JButton newL = new JButton("Try a Different Lesson");
-
+	
 	// Dimensions of the page
 	static int width = 1200, height = 800;
 
@@ -75,8 +78,12 @@ public class Lesson extends JPanel implements ActionListener {
 	public static void makeJFrame() {
 		Lesson t = new Lesson();
 		JFrame jf = new JFrame();
+		jf.setName("lesson");
 		// Panel on page with button
 		JPanel panel = new JPanel();
+		newL.setPreferredSize(new Dimension(200, 50));
+		newL.setFont(new Font("Default", Font.PLAIN, 16));
+		newL.setName("newL");
 		panel.add(newL);
 		
 		// Accept keyboard input

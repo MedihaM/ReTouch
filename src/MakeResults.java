@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -44,6 +45,8 @@ public class MakeResults extends JPanel {
 			// Button position and function
 			restartL.addActionListener(new ButtonListener(jf2));
 			restartL.setActionCommand("restart");
+			restartL.setPreferredSize(new Dimension(200, 50));
+			restartL.setFont(new Font("Default", Font.PLAIN, 16));
 			jf2.add(panel, BorderLayout.SOUTH);
 			jf2.setVisible(true);
 	    }

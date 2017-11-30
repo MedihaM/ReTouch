@@ -48,8 +48,9 @@ public class ButtonListener implements ActionListener {
 			}
 			UserInput.firstIncorrectChar = -1;
 
-			new SelectionPage();
-			new Lesson();
+			//new SelectionPage();
+                        new SelectionPage().setVisible(true);
+			//new Lesson();
 
 		}
 	}

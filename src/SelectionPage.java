@@ -56,7 +56,7 @@ public class SelectionPage extends javax.swing.JFrame {
         jComboBox1.setBounds(390, 460, 380, 60);
 
         jButton1.setBackground(new java.awt.Color(102, 255, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jButton1.setText("Start");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,9 +74,9 @@ public class SelectionPage extends javax.swing.JFrame {
         jLabel1.setText("Please select a lesson and press start to begin");
         jLabel1.setPreferredSize(new java.awt.Dimension(1200, 800));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(240, 360, 1000, 60);
+        jLabel1.setBounds(180, 360, 1000, 60);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 90)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 78)); // NOI18N
         jLabel2.setText("Welcome to ReTouch!");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(100, 40, 1040, 109);
@@ -84,7 +84,7 @@ public class SelectionPage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("Developed By: Abrar Attia, Susan Fayez, and Mediha Munim");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(290, 150, 1530, 80);
+        jLabel3.setBounds(240, 150, 1530, 80);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/24271360_921911621296126_605811305_o.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");

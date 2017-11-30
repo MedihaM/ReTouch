@@ -9,13 +9,12 @@ CLASSES = \
 	SelectionPage.java\
 	MakeResults.java\
 	Results.java\
-	ButtonListener.java\
-	StartPage.java
+	ButtonListener.java
 
 all: classes
 
 start: all
-	java StartPage
+	java SelectionPage
 
 classes:
 	$(JC) $(JFLAGS) $(CLASSES)

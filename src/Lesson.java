@@ -81,7 +81,7 @@ public class Lesson extends JPanel implements ActionListener {
 		jf.setName("lesson");
 		// Panel on page with button
 		JPanel panel = new JPanel();
-		newL.setPreferredSize(new Dimension(200, 50));
+		newL.setPreferredSize(new Dimension(265, 50));
 		newL.setFont(new Font("Default", Font.PLAIN, 16));
 		newL.setName("newL");
 		panel.add(newL);

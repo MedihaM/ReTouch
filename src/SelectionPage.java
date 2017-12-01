@@ -86,7 +86,7 @@ public class SelectionPage extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(240, 150, 1530, 80);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/24271360_921911621296126_605811305_o.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selectionP.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
         jLabel4.setPreferredSize(new java.awt.Dimension(1200, 800));
         getContentPane().add(jLabel4);

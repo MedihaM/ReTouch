@@ -16,7 +16,7 @@ import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 
 
-public class SelectionPage_Test{
+public class TestSelectionPage{
 	
 	private FrameFixture window;
 	private FrameFixture lessonPage;

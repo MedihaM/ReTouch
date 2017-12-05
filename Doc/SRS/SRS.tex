@@ -7,6 +7,7 @@
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{color}
 \graphicspath{ {img/} }
 
 \hypersetup{
@@ -26,7 +27,6 @@
 		\\ Mediha Munim - munimm
 }
 
-\date{\today}
 
 \begin{document}
 
@@ -90,7 +90,7 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \item\textbf{Noncompleted character:} A character is noncompleted if it is not a completed character.
     \item \textbf{Lesson beginning:} The moment when the list of words is first generated and displayed on screen.
     \item \textbf{Lesson end:} The moment when the last character in the current list of words has been completed.
-    \item \textbf{Results}: The time, typing accuracy, and typing speed of the user calculated at the end of a lesson.
+    \item \textbf{Results}: {\color{cyan}The time, typing accuracy, and typing speed of the user calculated at the end of a lesson.}
 \end{itemize}
 
 \subsection{Relevant Facts and Assumptions}
@@ -132,7 +132,7 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
 \end{tabular}
 \end{table}
 
-\subsubsection{Use Cases}
+\subsubsection{{\color{cyan}Use Cases}}
 
 \begin{figure}[H]
 	\includegraphics[scale=0.4]{UseCaseDiagram.jpg}
@@ -156,7 +156,7 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     FREQ4 & 5 & The system shall begin the program at the first character (which will become the current character) and wait for the user to type a character. \\ 
     \hline
-    FREQ5 & 5 & The system shall move the current character to the next character (to the right) when the user inputs a character (incorrect or not), unless the current character is at the end of a line. If it is at the end of a line, the current character will not change.   \\ 
+    FREQ5 & 5 & {\color{cyan}The system shall move the current character to the next character (to the right) when the user inputs a character (incorrect or not), unless the current character is at the end of a line. If it is at the end of a line, the current character will not change. }  \\ 
     \hline
     FREQ6 & 5 & The system shall set a current character as completed if the user presses the same character that is indicated by the current character. \\ 
     \hline
@@ -176,7 +176,7 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     FREQ14 & 4 & The system shall end the typing lesson when all characters are completed and “ENTER” is pressed. \\ 
     \hline
-    FREQ15 & 3 & The system should display the results of the lesson after the lesson is done. \\ 
+    FREQ15 & 3 & {\color{cyan}The system should display the results of the lesson after the lesson is done. }\\ 
     \hline
 
 \end{longtable}
@@ -190,13 +190,13 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    LF1 & 5 & The application will open to an introductory page that has multiple lesson options displayed. \\ 
+    {\color{cyan}LF1} & 5 & The application will open to an introductory page that has multiple lesson options displayed. \\ 
     \hline
-    LF2 & 5 & Once the lesson begins, the application will display all the required characters for the lesson in a text box. The current character will be highlighted to notify the user on what character to enter next. \\ 
+    {\color{cyan}LF2} & 5 & Once the lesson begins, the application will display all the required characters for the lesson in a text box. The current character will be highlighted to notify the user on what character to enter next. \\ 
     \hline
-    LF3 & 4 & Throughout the lesson, an on-screen keyboard will be displayed with the current character being highlighted. \\ 
+    {\color{cyan}LF3} & 4 & Throughout the lesson, an on-screen keyboard will be displayed with the current character being highlighted. \\ 
     \hline
-    LF4 & 3 & The GUI's components will be consistent in colour, text fonts, and window properties in order to keep the application organized and easy to navigate. \\ 
+    {\color{cyan}LF4} & 3 & The GUI's components will be consistent in colour, text fonts, and window properties in order to keep the application organized and easy to navigate. \\ 
     \hline
 \end{tabular}
 \end{table}
@@ -209,13 +209,13 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    UH1 & 5 & The application interface will be easy to use for any individual who is able to use a computer and keyboard and requires typing practice. The user should be able to navigate all three pages without instruction\\
+    {\color{cyan}UH1} & 5 & The application interface will be easy to use for any individual who is able to use a computer and keyboard and requires typing practice. {\color{cyan}The user should be able to navigate all three pages without instruction}\\
     \hline
-    UH2 & 5 & The application will be easy to follow and will not require any additional training to use. The user should be able to complete the lesson without instruction\\ 
+    {\color{cyan}UH2} & 5 & The application will be easy to follow and will not require any additional training to use. {\color{cyan}The user should be able to complete the lesson without instruction}\\ 
     \hline
-    UH3 & 4 & The application will provide typing lessons that appeal and work for individuals who are beginners with typing, people who are considered experts and can type proficiently, and everyone in between. There should be at least one lesson that the user finds challenging.\\
+    {\color{cyan}UH3} & 4 & The application will provide typing lessons that appeal and work for individuals who are beginners with typing, people who are considered experts and can type proficiently, and everyone in between. {\color{cyan}There should be at least one lesson that the user finds challenging.}\\
     \hline
-    UH4 & 4 & The application will be easy to install by any user. The user should be able to run the program with the provided instructions.\\
+    {\color{cyan}UH4} & 4 & The application will be easy to install by any user. {\color{cyan}The user should be able to run the program with the provided instructions.}\\
     \hline
 \end{tabular}
 \end{table}
@@ -228,15 +228,15 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    P1 & 5 & The application will respond to user input within 1 second. Furthermore, every completed character inputted by the user will allow the application to move to the next character. \\
+    {\color{cyan}P1} & 5 & {\color{cyan}The application will respond to user input within 1 second. Furthermore, every completed character inputted by the user will allow the application to move to the next character.} \\
     \hline
-    P2 & 5 & The applications recorded elapsed time will be accurate and begin right when the lesson loads and will stop when the user presses “ENTER”. This should be apparent from the GUI \\ 
+    {\color{cyan}P2} & 5 & The applications recorded elapsed time will be accurate and begin right when the lesson loads and will stop when the user presses “ENTER”. {\color{cyan}This should be apparent from the GUI }\\ 
     \hline
-    P3 & 4 & The application will be reliable and will only fail or crash in extreme unexpected circumstances. \\
+    {\color{cyan}P3} & 4 & The application will be reliable and will only fail or crash in extreme unexpected circumstances. \\
     \hline
-    P4 & 4 & The application will be a single-user system. \\
+    {\color{cyan}P4} & 4 & The application will be a single-user system. \\
     \hline
-    P5 & 4 & The application will not interfere with the user's machine. \\
+    {\color{cyan}P5} & 4 & The application will not interfere with the user's machine. \\
     \hline
 \end{tabular}
 \end{table}
@@ -249,9 +249,9 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    OE1 & 4 & The application will be functional in Windows, Mac, and Linux. \\
+    {\color{cyan}OE1} & 4 & The application will be functional in Windows, {\color{cyan}Mac,} and Linux. \\
     \hline
-    OE2 & 4 & The application will not depend on any other partner applications. \\
+    {\color{cyan}OE2} & 4 & The application will not depend on any other partner applications. \\
     \hline
 \end{tabular}
 \end{table}
@@ -264,7 +264,7 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    M1 & 3 & The source code of the application will be open to the public. \\
+    {\color{cyan}M1} & 3 & The source code of the application will be open to the public. \\
     \hline
 \end{tabular}
 \end{table}
@@ -277,9 +277,9 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    S1 & 4 & The application will remain confidential and will not store user results.\\
+    {\color{cyan}S1} & 4 & The application will remain confidential and will not store user results.\\
     \hline
-    S2 & 4 & The applications source code will not be augmented by any changes or updates made by the user when using the application. \\
+    {\color{cyan}S2} & 4 & The applications source code will not be augmented by any changes or updates made by the user when using the application. \\
     \hline
 \end{tabular}
 \end{table}
@@ -292,16 +292,16 @@ Dec 4 & 3.2 & Prefixes for non-functional requirements updated\\
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    C1 & 3 & The application shall not be offensive in any way to any potential user.\\
+    {\color{cyan}C1} & 3 & The application shall not be offensive in any way to any potential user.\\
     \hline
-    C2 & 3 & All the text within the application will be available in English. \\
+    {\color{cyan}C2} & 3 & All the text within the application will be available in English. \\
     \hline
 \end{tabular}
 \end{table}
 
 \subsection{Legal Requirements}
 
-No legal requirements at this time.
+{\color{cyan}No legal requirements at this time.}
 
 \subsection{Health and Safety Requirements}
 
@@ -311,11 +311,11 @@ No legal requirements at this time.
     \hline
     \textbf{Identifier} & \textbf{Priority} & \textbf{Requirement} \\ 
     \hline
-    HS1 & 3 & The application shall not impose any health risks upon its users. For instance, there will be no extreme flashing lights that may impact users with epilepsy.. \\
+    {\color{cyan}HS1} & 3 & {\color{cyan}The application shall not impose any health risks upon its users. For instance, there will be no extreme flashing lights that may impact users with epilepsy. }\\
     \hline
-     HS2 & 3 & A warning shall be placed in the instructions that extreme repetitive usage of the application that could cause strain on muscles and eyes. \\
+     {\color{cyan}HS2} & 3 & {\color{cyan}A warning shall be placed in the instructions that extreme repetitive usage of the application that could cause strain on muscles and eyes.} \\
     \hline
-    HS3 & 3 & The application shall not impose any safety risks upon its users. For instance, the users information will not be made public. \\
+    {\color{cyan}HS3} & 3 & {\color{cyan}The application shall not impose any safety risks upon its users. For instance, the users information will not be made public.} \\
     \hline
 \end{tabular}
 \end{table}
@@ -328,10 +328,10 @@ No legal requirements at this time.
 \\
 \indent Similarly, the developers of this project have never worked on a project of this scope. It will be a challenge to ensure that each component of the application runs smoothly, accurately, and concurrently.
 
-\indent The project itself also has issues that can be improved upon. The project we are basing our implementation on runs only on Linux, meaning portability can be greatly improved upon. Additionally, this application only has single user functionality, missing out on the benefits that a competitive element may bring to the user. By putting them against other users, they may be further motivated to improve their performance.
+\indent {\color{cyan}The project itself also has issues that can be improved upon. The project we are basing our implementation on runs only on Linux, meaning portability can be greatly improved upon. Additionally, this application only has single user functionality, missing out on the benefits that a competitive element may bring to the user. By putting them against other users, they may be further motivated to improve their performance.}
 
 \subsection{Off-the-Shelf Solutions}
-\indent \indent Many similar applications to K-Touch exist that are readily available to users. There are competitive online applications that allow users to race others to accurately complete a selection of text, such as TypeRacer, FreeTypingGame, Nitro Type, and Rapid Typing. These applications solve the competitiveness issue. There are also applications that are more similar to K-Touch, in that they focus singularly on the user and helping them improve their speed and accuracy, such as Typng Master, Key Hero, and 10FastFingers. All of the mentioned applications are available online, solving the portability issue.
+\indent \indent {\color{cyan}Many similar applications to K-Touch exist that are readily available to users. There are competitive online applications that allow users to race others to accurately complete a selection of text, such as TypeRacer, FreeTypingGame, Nitro Type, and Rapid Typing. These applications solve the competitiveness issue. There are also applications that are more similar to K-Touch, in that they focus singularly on the user and helping them improve their speed and accuracy, such as Typng Master, Key Hero, and 10FastFingers. All of the mentioned applications are available online, solving the portability issue.}
 
 \subsection{New Problems}
 \indent \indent The use of this application can potentially cause new problems for the user. One such problem is a potential Repetitive Strain Injury such as Carpal Tunnel Syndrome if the application is used for a prolonged period of time in a non-ergonomic way. 

@@ -3,16 +3,21 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color}
+\graphicspath{ {img/} }
+
 \hypersetup{
     colorlinks,
     citecolor=black,
-    filecolor=cyan,
+    filecolor=black,
     linkcolor=red,
     urlcolor=blue
 }
 \usepackage[round]{natbib}
-\usepackage{graphicx}
-\graphicspath{ {img/} }
 
 \title{SE 3XA3: Test Plan\\ReTouch}
 
@@ -22,7 +27,6 @@
 		\\ Mediha Munim - munimm
 }
 
-\date{\today}
 
 \begin{document}
 
@@ -33,7 +37,7 @@
 \listoftables
 \listoffigures
 
-\begin{table}[bp]
+\begin{table}[htp]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
@@ -41,10 +45,15 @@
 October 27 & 1.0 & PoC, and Unit Tests added\\
 October 27 & 1.1 & Added general information\\
 October 27 & 1.2 & Added System Test Description\\
+December 5 & 2.0 & Updated scope, testing approach, and testing tools\\
+December 5 & 2.1 & Edited test cases for functional  requirements)\\
+December 5 & 2.2 & Added links for symbolic parameters\\
+December 6 & 2.3 & Edited test cases for non-functional requirements\\
+December 6 & 2.4 & Updated naming conventions for non-functional tests to match srs doc\\
+
 \bottomrule
 \end{tabularx}
 \end{table}
-
 \newpage
 
 \pagenumbering{arabic}
@@ -59,7 +68,7 @@ This document describes the plan for testing ReTouch.
 
 \subsection{Scope}
 
-	The scope of ReTouch will be to improve KTouch by making it available on other operating systems while improving much of the functionality and user experience, while still providing an intuitive GUI and a user guide. Therefore, testing ReTouch will involve testing the GUI, the user input, file input and output, and the other algorithms. 
+	The scope of ReTouch will be to improve KTouch by making it available on {\color{cyan} a wider variety of operating systems, while improving much of the functionality and user experience and still providing an intuitive GUI and a user guide.} Therefore, testing ReTouch will involve testing the GUI, the user input, file input and output, and the other algorithms. 
 
 \subsection{Overview of Document}
 
@@ -84,12 +93,12 @@ This document describes the plan for testing ReTouch.
 
 \subsection{Testing Approach}
 
-	Many different testing techniques will be utlized in the testing process. Black box testing will involve unit testing and integration testing. To automate these tests, the team will take advantage of JUnit's functionalities. Private methods will be tested as well, and ideally testing will take place throughout the implementation process to ensure that the tests that passed early on in the process will still pass after finalizing the code (regression testing). To test the internal framework of the software, white box testing will be used. Not all of the testing will be automatic - manual system testing will be vital to the final product because the project is expected to have a detailed GUI. Both static and dynamic test cases will be covered using tools described in \hyperref[sec:tt]{Testing Tools}. In system testing, the functionalities of KTouch can be compared to ReTouch to ensure that it works just as it was intended to by the original programmers. All in all, the ReTouchers team strives to test as efficiently and effectively as possible.
+	Many different testing techniques will be utilized in the testing process. Black box testing will involve unit testing and integration testing. To automate these tests, the team will take advantage of JUnit's functionalities {\color{cyan} as well as AssertJ}. Private methods will be tested as well, and ideally testing will take place throughout the implementation process to ensure that the tests that passed early on in the process will still pass after finalizing the code. {\color{cyan} Regression testing will be used should we make any major changes to the implementation.} To test the internal framework of the software, white box testing will be used.{\color{cyan} The user input from the interface will be simulated using AssertJ's functionalities to make sure everything runs as expected.} Not all of the testing will be automatic - manual system testing will be vital to the final product because the project is expected to have a detailed GUI. Both static and dynamic test cases will be covered using tools described in \hyperref[sec:tt]{Testing Tools}. In system testing, the functionalities of KTouch can be compared to ReTouch to ensure that it works just as it was intended to by the original programmers. All in all, the ReTouchers team strives to test as efficiently and effectively as possible.
 
 \subsection{Testing Tools}
 \label{sec:tt}
 
-	As mentioned earlier, the main tool for testing the Java code will be JUnit. Static testing can take place automatically as the project will be implemented in Eclipse, which has static testing capabilities. JaCoCo is a code coverage tool that works well with Eclipse. However, due to the time constraints associated with the project and the potential learning curve with the library, it may not be used. Finally, Apache JMeter will be used for load testing.
+	As mentioned earlier, {\color{cyan}the main tools for testing the Java code will be JUnit and AssertJ}. Static testing can take place automatically as the project will be implemented in Eclipse, which has static testing capabilities. JaCoCo is a code coverage tool that works well with Eclipse. However, due to the time constraints associated with the project and the potential learning curve with the library, it may not be used. Finally, Apache JMeter will be used for load testing.
 
 \subsection{Testing Schedule}
 \label{sec:ts}
@@ -154,35 +163,59 @@ Type: Functional, Dynamic, Manual.
 					
 Initial State: During a Lesson
 					
-Input: User types the correct current character in the Lesson.
+Input: User types any character in the Lesson.
 					
-Output: The system sets that particular character in the Lesson as completed correctly.
+Output: The system sets that particular character in the Lesson as completed and the cursor moves on to the next character.
 					
-How test will be performed: The function that runs the Lesson will be run and user input will be entered. We will check that the system only marked the characters entered correctly as such.
+How test will be performed: The function that runs the Lesson will be run and user input will be entered. We will check that the system only marked the characters entered correctly as such and moves on to the next character when any character is entered.
 
-\item{FREQ8\\}
+\item{FREQ8(i)\\}
 
-Type: Functional, Dynamic, Manual.
+{\color{cyan}Type: Functional, Dynamic, Manual.
 					
-Initial State: During the Lesson, when the user reaches the end of a line.
+Initial State: During the Lesson, when the user reaches the end of a line having completed the correct characters.
 					
 Input: The user hits the enter key.
 					
-Output: If the user has completed the entire line correctly, they can move on to the next line. If not, they are informed that they must go back and fix their mistakes.
+Output: If the user can move on to the next line.
 					
-How test will be performed: The function that runs the Lesson will be run and user input for the first line will be entered. When the enter button is pressed, we will check if the system gives the proper response, either allowing the user to continue on to the next line, or prompt them to fix their mistakes, depending on whether the input for the line was correct or not.
+How test will be performed: The function that runs the Lesson will be run and the correct user input for the first line will be entered. When the enter button is pressed, we will check if the system gives the proper response, allowing the user to continue on to the next line.}
 
-\item{FREQ14\\}
-
+\item{FREQ8(ii)}
+{\color{cyan}
 Type: Functional, Dynamic, Manual.
 					
-Initial State: During the Lesson, when the user has finished typing everything.
+Initial State: During the Lesson, when the user reaches the end of a line, having made mistakes.
 					
 Input: The user hits the enter key.
 					
-Output: If the user has completed the entire Lesson correctly, the Lesson is completed.
+Output: The user may not move on the the next line.
 					
-How test will be performed: The function that runs the Lesson will be run and the user input will be entered for the entire Lesson. We will check to make sure the system terminates the Lesson after the correct input is entered for the entire Lesson and the enter key is entered.
+How test will be performed: The function that runs the Lesson will be run and user input for the first line will be entered with mistakes. When the enter button is pressed, we will check if the system gives the proper response, preventing the user from moving on to the next line.}
+
+\item{FREQ14(i)\\}
+{\color{cyan}
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During the Lesson, when the user has finished typing everything correctly.
+					
+Input: The user hits the enter key.
+					
+Output: The Lesson page is closed
+					
+How test will be performed: The function that runs the Lesson will be run and the user input will be entered for the entire Lesson correctly. We will check to make sure the Lesson page terminates.}
+
+\item{FREQ14(ii)\\}
+{\color{cyan}
+Type: Functional, Dynamic, Manual.
+					
+Initial State: During the Lesson, when the user has finished typing everything but has made uncorrected mistakes.
+					
+Input: The user hits the enter key.
+					
+Output: The Lesson page does not terminate until the user goes back and corrects their mistakes.
+					
+How test will be performed: The function that runs the Lesson will be run and the user input will be entered for the entire Lesson with mistakes made on the last line. We will check to make sure the Lesson page does not terminate the Lesson page until after the mistakes are corrected and the user hits enter.}
 
 \end{enumerate}
 
@@ -215,8 +248,8 @@ Output: The current character is moved to the previous character in the Lesson. 
 How test will be performed: The function that runs the Lesson will be run and user input will be entered. The backspace key will be entered and we will check that the current character has moved appropriately.
 
 \item{FREQ10\\}
-
-Type: Functional, Dynamic, Manual.
+{\color{cyan}
+Type: Functional, Dynamic, Automatic.
 					
 Initial State: During the Lesson.
 					
@@ -224,7 +257,7 @@ Input: User input for the Lesson, with some mistakes.
 					
 Output: The number of characters entered incorrectly is stored in a variable.
 					
-How test will be performed: The function that runs the Lesson will be run and user input will be entered, with several mistakes. We will check that the counter variable for the number of mistakes is equal to the actual number of mistakes.
+How test will be performed: The function that runs the Lesson will be run and user input will be simulated, with several mistakes. We will check that the counter variable for the number of mistakes is equal to the actual number of mistakes.}
 \end{enumerate}
 
 \subsubsection{Display}
@@ -277,8 +310,8 @@ Output: The system displays the elapsed time, from when the user began the Lesso
 How test will be performed:  The function that runs the Lesson will be run and we will check that the timer is displayed.
 
 \item{FREQ12\\}
-
-Type: Structural
+{\color{cyan}
+Type: Functional, Dynamic, Automatic.
 					
 Initial State: During the Lesson.
 					
@@ -286,8 +319,7 @@ Input: The user works on the Lesson.
 					
 Output: The system displays the user's typing accuracy.
 					
-How test will be performed:  The function that runs the Lesson will be run and we will check that the user accuracy is displayed correctly. 
-
+How test will be performed:  The function that runs the Lesson will be run and user input will be simulated with mistakes. We will check that the value for the accuracy is what we expect it to be and displayed as such.}
 \item{FREQ13\\}
 
 Type: Structural
@@ -301,7 +333,7 @@ Output: The system displays the user's typing speed
 How test will be performed:  The function that runs the Lesson will be run and we will check that the user's typing speed is displayed correctly.  
 
 \item{FREQ15\\}
-
+{\color{cyan}
 Type: Structural
 					
 Initial State: The Lesson is completed
@@ -310,7 +342,7 @@ Input: The user hits enter after they finish the Lesson
 					
 Output: The results (time, typing accuracy, and typing speed) are displayed to the user.
 		
-How test will be performed: The function that runs the Lesson will be run and the user input will be entered correctly. When the user has completed the Lesson, we will check that the results are properly displayed.
+How test will be performed: The function that runs the Lesson will be run and the user input will be entered correctly. When the user has completed the Lesson, we will check that the Results page is opened with the correct results.}
 
 \end{enumerate}
 
@@ -320,7 +352,7 @@ How test will be performed: The function that runs the Lesson will be run and th
 
 \begin{enumerate}
 
-\item{NFREQ4}
+\item{{\color{cyan}LF3}}
 
 Type: Structural, Static, Manual
 					
@@ -337,7 +369,7 @@ How test will be performed: We will navigate all three stages of the application
 \subsubsection{Usability and Humanity}
 \begin{enumerate}
 
-\item{NFREQ5\\}
+\item{{\color{cyan}UH1}\\}
 
 Type: Structural, Static, Manual
 					
@@ -347,9 +379,9 @@ Input/Condition: The user asked to complete the lesson, with no further guidance
 					
 Output/Result: The user should be able to complete the lesson.
 					
-How test will be performed: A test group of users unfamiliar with the application will be asked to test it out.
+How test will be performed: A test group of users unfamiliar with the application will be asked to test it out.{\color{cyan} They will be asked to rate intuitiveness of the application and whether they could complete the lesson.}
 
-\item{NFREQ6\\}
+\item{{\color{cyan}UH2}\\}
 
 Type: Structural, Static, Manual
 					
@@ -359,9 +391,9 @@ Input/Condition: The user, asked to complete the process of opening the applicat
 					
 Output/Result: The user should be able to easily navigate the three stages of the application.
 					
-How test will be performed:  A test group of users unfamiliar with the application will be asked to test it out.
+How test will be performed:  A test group of users unfamiliar with the application will be asked to test it out.{\color{cyan} They will be asked to rate intuitiveness of the application and whether they were able to visit every page of the application.}
 
-\item{NFREQ7\\}
+\item{{\color{cyan}UH3}\\}
 
 Type: Structural, Static, Manual
 					
@@ -371,9 +403,9 @@ Input/Condition: User asked to try various Lessons of varying difficulty.
 					
 Output/Result: The user should find at least one Lesson challenging/helpful in improving their typing skills.
 					
-How test will be performed:  A test group of users unfamiliar with the application and of varying levels of typing proficiency will be asked to test it out.
+How test will be performed:  A test group of users unfamiliar with the application and of varying levels of typing proficiency will be asked to test it out.{\color{cyan} They will be asked if they found any of the lessons challenging.}
 
-\item{NFREQ8\\}
+\item{{\color{cyan}UH4}\\}
 
 Type: Structural, Static, Manual
 					
@@ -383,13 +415,13 @@ Input/Condition: The user asked to install the application.
 					
 Output/Result: The application should be easy for for the user to install.
 					
-How test will be performed:  A test group of users unfamiliar with the application will be asked to install the application.
+How test will be performed:  A test group of users unfamiliar with the application will be asked to {\color{cyan} compile and run the program. They will be timed and rate the difficulty of this process.}
 
 \end{enumerate}
 \subsubsection{Performance}
 \begin{enumerate}
 
-\item{NFREQ9\\}
+\item{{\color{cyan}P1}\\}
 
 Type: Structural, Dynamic, Manual
 					
@@ -399,9 +431,9 @@ Input/Condition: The user works on the Lesson.
 					
 Output/Result: The system will respond to the user input within 1 second.
 					
-How test will be performed: A user will work through a Lesson and we will check the response time as they go. 
+How test will be performed: A user will work through a Lesson and we will check the response time as they go.{\color{cyan} We will also ask them if they experienced any lagging.} 
 
-\item{NFREQ10\\}
+\item{{\color{cyan}P2}\\}
 
 Type: Structural, Dynamic, Manual
 					
@@ -409,11 +441,11 @@ Initial State: During the Lesson.
 					
 Input/Condition: The user works on the Lesson.
 					
-Output/Result: The timer displayed to the user will be accurate and begin once the user enters their first character, and will end once the user hits enter to complete the Lesson.
+Output/Result: The timer displayed to the user will be accurate and begin once the {\color{cyan}lesson loads} and will end once the user hits enter {\color{cyan} on the last line} to complete the Lesson.
 					
 How test will be performed: A user will work on a Lesson and we will check that the timer is accurate.
 
-\item{NFREQ13\\}
+\item{{\color{cyan}P5}\\}
 
 Type: Structural, Static, Manual
 					
@@ -429,19 +461,19 @@ How test will be performed: We will check on the user's machine during and after
 \subsubsection{Operation and Environment}
 \begin{enumerate}
 
-\item{NFREQ14\\}
+\item{{\color{cyan} OE1}\\}
 
 Type: Structural, Static, Manual
 					
-Initial State: Application installed on a Windows and a Linux machine.
+Initial State: Application compiled on a Windows, {\color{cyan}Mac}, and Linux machine.
 					
 Input/Condition: User runs the application on both machines.
 					
-Output/Result: The application should run smoothly on both machines.
+Output/Result: The application should run smoothly on {\color{cyan} all} machines.
 					
-How test will be performed: Run the application on both machines.
+How test will be performed: Run the application on {\color{cyan}all} machines.
 
-\item{NFREQ15\\}
+\item{{\color{cyan}OE2}}
 
 Type: Structural, Static, Manual
 					
@@ -458,7 +490,7 @@ How test will be performed: We will open the application by itself, independent 
 \subsubsection{Security}
 \begin{enumerate}
 
-\item{NFREQ17\\}
+\item{{\color{cyan}S1}\\}
 
 Type: Structural, Static, Manual
 					
@@ -474,7 +506,7 @@ How test will be performed: When the user completes their lesson, we will check 
 \subsubsection{Cultural}
 \begin{enumerate}
 
-\item{NFREQ19\\}
+\item{{\color{cyan}C1}\\}
 
 Type: Structural, Static, Manual
 					
@@ -484,7 +516,7 @@ Input/Condition: A user will be asked to open and go through the three stages of
 					
 Output/Result: The user shall not be offended by any of the content within the application.
 					
-How test will be performed: A test group of users unfamiliar with the application will be asked to use the application. 
+How test will be performed: A test group of users unfamiliar with the application will be asked to use the application. {\color{cyan} We will ask them if they were offended by anything in the application.}
 \end{enumerate}
 
 \section{Tests for Proof of Concept}
@@ -529,7 +561,7 @@ There are currently no required tests to be done to compare the application to t
 				
 \section{Unit Testing Plan}
 
-The JUnit unit testing framework will be used to implement the unit testing for the ReTouch application.
+The JUnit unit testing framework {\color{cyan}as well as AssertJ} will be used to implement the unit testing for the ReTouch application.
 		
 \subsection{Unit testing of internal functions}
 

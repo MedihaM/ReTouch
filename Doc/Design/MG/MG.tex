@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{ulem}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -38,7 +39,7 @@
 		\\ Mediha Munim - munimm
 }
 
-\date{November 10, 2017}
+\date{December 6, 2017}
 
 \begin{document}
 
@@ -55,8 +56,9 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 November 10 & 1.0 & Added Module Hierarchy\\
-November 10 & 1.1 & Added Tracability Matrix between Modules and Requirments\\
+November 10 & 1.1 & Added Traceability Matrix between Modules and Requirements\\
 November 10 & 1.2 & Added Module Decomposition and Requirements/Design Connections\\
+December 6 & 2.0 & Added Button Listener Module, Updated Uses Hierarchy\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -110,11 +112,12 @@ change.
 \item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific hardware on which the software is running.
 \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the initial input data.
 \item[\refstepcounter{acnum} \actheacnum \label{acOS}:] The Operating Systems of which the Software interfaces with.
- \item[\refstepcounter{acnum} \actheacnum \label{acFinalOutput}:] The format of the final output and display.
- \item[\refstepcounter{acnum} \actheacnum \label{acGUI}:] The graphical user interface elements used to display effects of user input.
- \item[\refstepcounter{acnum} \actheacnum \label{acCalculations}:] The calculation methods for determining user speed and accuracy.
-  \item[\refstepcounter{acnum} \actheacnum \label{acLessons}:] The number of lessons (and their contents) that can be selected by the user.
-   \item[\refstepcounter{acnum} \actheacnum \label{acTimer}:] The precision of the timer and whether it should measure milliseconds.
+\item[\refstepcounter{acnum} \actheacnum \label{acFinalOutput}:] The format of the final output and display.
+\item[\refstepcounter{acnum} \actheacnum \label{acGUI}:] The graphical user interface elements used to display effects of user input.
+\item[\refstepcounter{acnum} \actheacnum \label{acCalculations}:] The calculation methods for determining user speed and accuracy.
+\item[\refstepcounter{acnum} \actheacnum \label{acLessons}:] The number of lessons (and their contents) that can be selected by the user.
+\item[\refstepcounter{acnum} \actheacnum \label{acTimer}:] The precision of the timer and whether it should measure milliseconds.
+\textcolor{cyan}{\item[\refstepcounter{acnum} \actheacnum \label{acButtons}:] The data structure used to make the buttons to return to the lesson selection page.}
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -150,6 +153,8 @@ actually be implemented.
 \item [\refstepcounter{mnum} \mthemnum \label{mMR}:] Make Results Module
 \item [\refstepcounter{mnum} \mthemnum \label{mR}:] Results Module
 \item [\refstepcounter{mnum} \mthemnum \label{mS}:] Scheduler Module
+\textcolor{cyan}{
+\item [\refstepcounter{mnum} \mthemnum \label{mBL}:]{Button Listener Module}}
 \end{description}
 
 
@@ -173,6 +178,7 @@ actually be implemented.
 \multirow{3}{0.3\textwidth}{Software Decision Module} & {Make Results Module}\\
 & Results Module\\
 & Scheduler Module \\
+& \textcolor{cyan}{Button Listener Module}\\
 \bottomrule
 
 \end{tabular}
@@ -279,6 +285,15 @@ All of the modules in the creation of ReTouch were decomposed with Information H
 \item[Implemented By:] --
 \end{description}
 
+\color{cyan}
+\subsubsection{Button Listener Module (\mref{mBL})}
+\begin{description}
+\item[Secrets:] The data structure used to implement the buttons.
+\item[Services:] Creates a button that returns to the lesson selection page.
+\item[Implemented By:] --
+\end{description}
+
+\color{black}
 
 \section{Traceability Matrix} \label{SecTM}
 
@@ -308,6 +323,8 @@ FREQ12 & \mref{mL}, \mref{mS}\\
 FREQ13 & \mref{mL}, \mref{mS}\\
 FREQ14 & \mref{mUI}\\
 FREQ15 & \mref{mUI}, \mref{mMR}, \mref{mR}\\
+\textcolor{cyan}{FREQ16} & \textcolor{cyan}{\mref{mBL}, \mref{mL}}\\
+\textcolor{cyan}{FREQ17} & \textcolor{cyan}{\mref{mBL}, \mref{mR}}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -329,6 +346,7 @@ FREQ15 & \mref{mUI}, \mref{mMR}, \mref{mR}\\
 \acref{acCalculations} & \mref{mS}, \mref{mUI}\\
 \acref{acLessons} & \mref{mL}, \mref{mSP} \\
 \acref{acTimer} & \mref{mSP}, \mref{mMR}\\
+\textcolor{cyan}{\acref{acButtons}} & \textcolor{cyan}{\mref{mBL}}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
@@ -356,3 +374,4 @@ because they use modules from the lower levels.
 \bibliography {MG}
 
 \end{document}
+

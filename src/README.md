@@ -1,6 +1,6 @@
 # ReTouch Source Code
 
-*IMPORTANT NOTE: To run the tests, open in files eclipse, have pom.xml file in the project & test the files in src folder.*
+*IMPORTANT NOTE: To run the tests, open the files in Eclipse, have pom.xml file in the project & test the files in src folder.*
 
 The folders and files for this project are as follows:
 

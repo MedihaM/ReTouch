@@ -1,0 +1,47 @@
+Welcome to ReTouch!
+Developed by: Abrar Attia, Susan Fayez, and Mediha Munim
+
+Getting Started:
+
+To compile and run ReTouch, cd to the src folder from the command prompt and enter
+make start. This will run the program and open the Selection Page.
+
+Lesson Selection:
+
+On the Selection Page, you will be prompted to select a lesson. Each lesson has a different
+area of focus. They are as follows:
+
+all: Focuses on full English words.
+asdf: Focuses on the left home keys.
+cnsnts: Focuses on consonants.
+hjkl: Focuses on the right home keys.
+vowels: Focuses on vowels.
+
+Select the area in which you would like to practise your typing skills and press start.
+
+Lesson:
+
+Once you have selected a lesson, you will be redirected to the Lesson Page. As soon as it
+loads, the timer will begin and you may begin typing the text on the screen. As you go
+along, the text you have correctly completed will turn from black to gray. If you make
+a mistake, a message will flash on the screen telling you to hit backspace. The mistake and
+any text you type in after will be highlighted in red. When you reach the end of a line, you
+must press enter, a message will pop up on the screen informing you of this. If you have 
+made mistakes and you reach the end of a line, you will not be allowed to continue to the
+next line without going back and correcting your mistake. Similarly, when you reach the end
+of the lesson, you must hit enter to complete it and stop the timer. If you have mistakes on 
+the final line, will not be permitted to complete the lesson until you have corrected them.
+If at any point during the lesson, you wish to stop and try a different lesson, there is
+a button at the bottom of the screen allowing you to do so.
+
+Results:
+
+Once you hit enter to complete your lesson, you will be redirected to the Results page
+and stats on your characters per minute, accuracy, and time will be displayed to you.
+These are also displayed to you during the lesson in the top bar of the page. If you 
+wish to complete another lesson, press the button prompting you to do so.
+
+Thank you for supporting ReTouch!! :)
+
+WARNING: Extended use of this application may cause strain on the eyes and hands. Please
+use responsibly and take appropriate breaks.

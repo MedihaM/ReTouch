@@ -1,0 +1,34 @@
+ReTouch Testing: User Survey
+Maryam Ahmad
+On a scale of 1-5, how easy was it to use? (5 = easiest)
+	1	2	3	4	5 
+Ans: 5
+
+Which program was easier to use – KTouch or ReTouch?
+	KTouch		ReTouch
+	Explain: initial expectation of the application made easier. Red appearance of mistakes makes it easier.
+Ans: ReTouch
+	
+
+Were you able to complete the lesson independently?
+	Yes			No 
+Ans: Yes
+
+
+Were you offended by anything in the program?
+	Yes			No
+	Explain:
+Ans:  No
+	
+
+
+
+
+Developer Observations
+How long did it take the user to start the lesson?
+-	Relatively immediate. Required some instruction
+Were any bugs / errors produced or evident during execution?
+-	None evident
+Did the user ask any questions? If so, state below.
+-	Why is the letters red?
+-	Why do I have to press enter?

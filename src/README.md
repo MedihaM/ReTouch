@@ -1,5 +1,7 @@
 # ReTouch Source Code
 
+*IMPORTANT NOTE: To run the tests, open in files eclipse, have pom.xml file in the project & test the files in src folder.*
+
 The folders and files for this project are as follows:
 
 
@@ -26,7 +28,6 @@ SelectionPage.java
 UserInput.java
 
 ## Code for Testing
-*To run tests: Open in eclipse, have pom.xml file in project & test files in src folder.*
 
 Test_Lesson.java
 
@@ -37,7 +38,6 @@ Test_SelectionPage.java
 pom.xml
 
 ## Data and img files
-
 
 /data
 

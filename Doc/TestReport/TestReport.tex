@@ -259,10 +259,101 @@ Result: PASS; The system correctly displays all the user results on the final re
 
 		
 \section{Trace to Requirements}
+The trace between the tests and the requirements is shown in Table 2 (below).
+
+\begin{table}[!htbp]
+			\begin{tabular}{ll}
+				\toprule
+				Test & Requirements \\
+				\midrule
+				\multicolumn{2}{c}{Functional Requirements Testing} \\
+				\midrule
+        		FT16 & FREQ1 \\
+        		FT17 & FREQ17 \\
+        		FT4 & FREQ4 \\
+        		FT5 & FREQ5 \\
+        		FT6 & FREQ6 \\
+        		FT8(i) & FREQ8 \\
+        		FT8(ii) & FREQ8 \\
+        		FT14(i) & FREQ14 \\
+        		FT14(ii) & FREQ14 \\
+        		FT7 & FREQ7 \\
+        		FT9 & FREQ9 \\
+        		FT10 & FREQ10 \\
+        		FT2 & FREQ2 \\
+        		FT3 & FREQ3 \\
+        		FT11 & FREQ11\\
+        		FT12 & FREQ12\\
+        		FT13 & FREQ13 \\
+        		FT15 & FREQ15 \\
+				\midrule
+				\multicolumn{2}{c}{Non-functional Requirements Testing} \\
+				\midrule
+				LF3 & LF3 \\
+				UH1 & UH1 \\
+				UH2 & UH2 \\
+				UH3 & UH3\\
+				UH4 & UH4 \\
+				P1 & P1 \\
+				P2 & P2\\
+				P5 & P5\\
+				OE1 & OE1\\
+				OE2 & OE2\\
+				S1 & S1\\
+				C1 & C1\\
+				\bottomrule
+			\end{tabular}
+			\caption{Trace Between Tests and Requirements}
+			% Colour for the rulings in tables:
+			\makeatletter
+			\def\rulecolor#1#{\CT@arc{#1}}
+			\def\CT@arc#1#2{%
+				\ifdim\baselineskip=\z@\noalign\fi
+				{\gdef\CT@arc@{\color#1{#2}}}}
+			\let\CT@arc@\relax
+			\makeatother
+			\label{Table}
+		\end{table}
 		
-\section{Trace to Modules}		
+\section{Trace to Modules}
+The trace between the tests and the modules is shown in Table 3 (below).
+
+\begin{table}[!htb]
+\centering
+	\begin{tabular}{ll}
+		\toprule
+		Test & Modules \\
+		\midrule
+		\multicolumn{2}{c}{Automated Testing} \\
+		\midrule
+		FT1 & M5 \\
+		FT16 & M10, M3 \\
+		FT17 & M10, M3 \\
+		FT4 & M2, M6 \\
+		FT5 & M2, M6 \\
+		FT6 & M2, M6 \\
+		FT8(i) & M2, M6 \\
+		FT8(ii) & M2, M6 \\
+		FT14(i) & M6 \\
+		FT14(ii) & M6 \\
+		FT7 & M2, M6 \\
+		FT9 & M2, M6 \\
+		FT10 & M6 \\
+		FT2 & M4, M5 \\
+		FT3 & M2, M3, M5 \\
+		FT11 & M3, M9\\
+		FT12 & M3, M9 \\
+		FT13 & M3, M9 \\
+		FT15 & M6, M7, M8 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Trace Between Tests and Modules}
+\end{table}
+
 
 \section{Code Coverage Metrics}
+The developers of the ReTouh application have estimated that roughly 70 percent code coverage is achieved throughout the tests. This number is based off the fact that the modules that have been covered by the tests contain the most code and the most necessary code since it conducts most of the functionality of the application. This is evident within the trace to modules table. 
+
 
 \bibliographystyle{plainnat}
 

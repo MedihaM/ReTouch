@@ -78,7 +78,7 @@ public class Lesson extends JPanel implements ActionListener {
 	public static void makeJFrame() {
 		Lesson t = new Lesson();
 		JFrame jf = new JFrame();
-		jf.setName("lesson");
+		jf.setName("selectedLesson");
 		// Panel on page with button
 		JPanel panel = new JPanel();
 		newL.setPreferredSize(new Dimension(265, 50));

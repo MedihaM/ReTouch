@@ -32,7 +32,9 @@ public class SelectionPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox();
+        jComboBox1.setName("jComboBox1");
         jButton1 = new javax.swing.JButton();
+        jButton1.setName("jButton1");
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();

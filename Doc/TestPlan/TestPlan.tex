@@ -51,6 +51,7 @@ December 5 & 2.2 & Added links for symbolic parameters\\
 December 6 & 2.3 & Edited test cases for non-functional requirements\\
 December 6 & 2.4 & Updated naming conventions for non-functional tests to match srs doc\\
 December 6 & 2.5 & Added test cases for FREQ16 and FREQ17\\
+December 6 & 2.6 & Updated naming conventions for functional tests\\
 
 \bottomrule
 \end{tabularx}
@@ -109,14 +110,14 @@ The Gantt Project, which illustrates the project schedule, can be found \href{ru
 \section{System Test Description}
 	
 \subsection{Tests for Functional Requirements}
-
+The test numbers for the functional requirements test correspond to the related requirement.
 \subsubsection{User Input}
 		
 \paragraph{Lesson Selection}
 
 \begin{enumerate}
 
-\item{FREQ1\\}
+\item{{\color{cyan}FT1}\\}
 
 Type: Functional, Dynamic, Manual.
 					
@@ -128,7 +129,7 @@ Output: User redirected to beginning of Lesson screen.
 					
 How test will be performed: The function that runs the selected Lesson will be run. We will check that the correct Lesson was opened.
 
-\item{{\color{cyan}FREQ16}\\}
+\item{{\color{cyan}FT16}\\}
 {\color{cyan}
 Type: Functional, Dynamic, Manual.
 					
@@ -141,7 +142,7 @@ Output: The Lesson the user is working on is terminated and the Lesson Selection
 How test will be performed: The function that runs the selected Lesson will be run. A Lesson will be selected and then the return to Lesson Selection page button will be pressed. We will check that Lesson is closed and the Lesson Selection page is opened.
 }
 
-\item{{\color{cyan}FREQ17}\\}
+\item{{\color{cyan}FT17}\\}
 {\color{cyan}
 Type: Functional, Dynamic, Manual.
 					
@@ -157,7 +158,7 @@ How test will be performed: The function that runs the selected Lesson will be r
 \paragraph{Lesson Execution}
 \begin{enumerate}
     					
-\item{FREQ4\\}
+\item{{\color{cyan}FT4}\\}
 
 Type: Functional, Dynamic, Manual.
 					
@@ -170,7 +171,7 @@ Output: The Lesson is run, the system sets the current character to the first ch
 How test will be performed: The function that runs the selected Lesson will be run. We will check that the current character value is set to the first character in the given Lesson.
 
 					
-\item{FREQ5\\}
+\item{{\color{cyan}FT5}\\}
 
 Type: Functional, Dynamic, Manual.
 					
@@ -183,7 +184,7 @@ Output: The system moves the current character value to the next one in the Less
 How test will be performed: The function that runs the Lesson will be run, user input will be provided. We will check the current character value for each time a character is entered to make sure it is being updated properly.
 
 					
-\item{FREQ6\\}
+\item{{\color{cyan}FT6}\\}
 
 Type: Functional, Dynamic, Manual.
 					
@@ -195,7 +196,7 @@ Output: The system sets that particular character in the Lesson as completed and
 					
 How test will be performed: The function that runs the Lesson will be run and user input will be entered. We will check that the system only marked the characters entered correctly as such and moves on to the next character when any character is entered.
 
-\item{FREQ8(i)\\}
+\item{{\color{cyan}FT8(i)}\\}
 
 {\color{cyan}Type: Functional, Dynamic, Manual.
 					
@@ -207,7 +208,7 @@ Output: If the user can move on to the next line.
 					
 How test will be performed: The function that runs the Lesson will be run and the correct user input for the first line will be entered. When the enter button is pressed, we will check if the system gives the proper response, allowing the user to continue on to the next line.}
 
-\item{FREQ8(ii)}
+\item{{\color{cyan}FT8}(ii)}
 {\color{cyan}
 Type: Functional, Dynamic, Manual.
 					
@@ -219,7 +220,7 @@ Output: The user may not move on the the next line.
 					
 How test will be performed: The function that runs the Lesson will be run and user input for the first line will be entered with mistakes. When the enter button is pressed, we will check if the system gives the proper response, preventing the user from moving on to the next line.}
 
-\item{FREQ14(i)\\}
+\item{{\color{cyan}FT14(i)}\\}
 {\color{cyan}
 Type: Functional, Dynamic, Manual.
 					
@@ -231,7 +232,7 @@ Output: The Lesson page is closed
 					
 How test will be performed: The function that runs the Lesson will be run and the user input will be entered for the entire Lesson correctly. We will check to make sure the Lesson page terminates.}
 
-\item{FREQ14(ii)\\}
+\item{{\color{cyan}FT14(ii)}\\}
 {\color{cyan}
 Type: Functional, Dynamic, Manual.
 					
@@ -249,7 +250,7 @@ How test will be performed: The function that runs the Lesson will be run and th
 
 \begin{enumerate}
 
-\item{FREQ7\\}
+\item{{\color{cyan}FT7}\\}
 
 Type: Functional, Dynamic, Manual.
 					
@@ -261,7 +262,7 @@ Output: The system highlights the the character that was entered incorrectly, an
 					
 How test will be performed: The function that runs the Lesson will be run and the user input will be entered incorrectly. We will check that the appropriate characters will be highlighted as incorrect.
 
-\item{FREQ9\\}
+\item{{\color{cyan}FT9}\\}
 
 Type: Functional, Dynamic, Manual.
 					
@@ -273,7 +274,7 @@ Output: The current character is moved to the previous character in the Lesson. 
 					
 How test will be performed: The function that runs the Lesson will be run and user input will be entered. The backspace key will be entered and we will check that the current character has moved appropriately.
 
-\item{FREQ10\\}
+\item{{\color{cyan}FT10}\\}
 {\color{cyan}
 Type: Functional, Dynamic, Automatic.
 					
@@ -291,7 +292,7 @@ How test will be performed: The function that runs the Lesson will be run and us
 
 \begin{enumerate}
 
-\item{FREQ2\\}
+\item{{\color{cyan}FT2}\\}
 
 Type: Functional, Dynamic, Manual.
 					
@@ -310,7 +311,7 @@ How test will be performed: The function that runs the Lesson will be run and we
 \begin{enumerate}
 
 
-\item{FREQ3\\}
+\item{{\color{cyan}FT3}\\}
 
 Type: Structural
 					
@@ -323,7 +324,7 @@ Output: The system displays the list of characters in the Lesson. The list of ch
 					
 How test will be performed: The function that runs the Lesson will be run and we will check that the Lesson is displayed.
 
-\item{FREQ11\\}
+\item{{\color{cyan}FT11}\\}
 
 Type: Structural
 					
@@ -335,7 +336,7 @@ Output: The system displays the elapsed time, from when the user began the Lesso
 					
 How test will be performed:  The function that runs the Lesson will be run and we will check that the timer is displayed.
 
-\item{FREQ12\\}
+\item{{\color{cyan}FT12}\\}
 {\color{cyan}
 Type: Functional, Dynamic, Automatic.
 					
@@ -346,7 +347,7 @@ Input: The user works on the Lesson.
 Output: The system displays the user's typing accuracy.
 					
 How test will be performed:  The function that runs the Lesson will be run and user input will be simulated with mistakes. We will check that the value for the accuracy is what we expect it to be and displayed as such.}
-\item{FREQ13\\}
+\item{{\color{cyan}FT13}\\}
 
 Type: Structural
 					
@@ -358,7 +359,7 @@ Output: The system displays the user's typing speed
 					
 How test will be performed:  The function that runs the Lesson will be run and we will check that the user's typing speed is displayed correctly.  
 
-\item{FREQ15\\}
+\item{{\color{cyan}FT15}\\}
 {\color{cyan}
 Type: Structural
 					

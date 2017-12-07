@@ -1,3 +1,3 @@
 # Module Interface Specification #
 
-Use doxygen (or equivalent) to document the interface for your modules.
+Used Javadocs to document the interface for the modules.

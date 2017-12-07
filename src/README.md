@@ -23,8 +23,6 @@ Scheduler.java
 
 SelectionPage.java
 
-StartPage.java
-
 UserInput.java
 
 ## Code for Testing

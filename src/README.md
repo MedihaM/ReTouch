@@ -1,6 +1,7 @@
 # ReTouch Source Code
 
 *IMPORTANT NOTE: To run the tests, open the files in Eclipse, have pom.xml file in the project & test the files in src folder.*
+To run the program, simply type "make start" in the Linux command line.
 
 The folders and files for this project are as follows:
 

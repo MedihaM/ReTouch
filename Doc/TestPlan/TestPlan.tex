@@ -50,6 +50,7 @@ December 5 & 2.1 & Edited test cases for functional  requirements)\\
 December 5 & 2.2 & Added links for symbolic parameters\\
 December 6 & 2.3 & Edited test cases for non-functional requirements\\
 December 6 & 2.4 & Updated naming conventions for non-functional tests to match srs doc\\
+December 6 & 2.5 & Added test cases for FREQ16 and FREQ17\\
 
 \bottomrule
 \end{tabularx}
@@ -127,6 +128,31 @@ Output: User redirected to beginning of Lesson screen.
 					
 How test will be performed: The function that runs the selected Lesson will be run. We will check that the correct Lesson was opened.
 
+\item{{\color{cyan}FREQ16}\\}
+{\color{cyan}
+Type: Functional, Dynamic, Manual.
+					
+Initial State: The user is in the middle of a Lesson.
+					
+Input: The return to Lesson Selection button is pressed.
+					
+Output: The Lesson the user is working on is terminated and the Lesson Selection page is opened.
+					
+How test will be performed: The function that runs the selected Lesson will be run. A Lesson will be selected and then the return to Lesson Selection page button will be pressed. We will check that Lesson is closed and the Lesson Selection page is opened.
+}
+
+\item{{\color{cyan}FREQ17}\\}
+{\color{cyan}
+Type: Functional, Dynamic, Manual.
+					
+Initial State: The User has completed a Lesson and is on the Results page.
+					
+Input: The choose another Lesson button is pressed.
+					
+Output: The Results page is terminated and the Lesson Selection page is opened.
+					
+How test will be performed: The function that runs the selected Lesson will be run. A Lesson will be selected and the Lesson will be completed. The user will be redirected to the Results page and the select another Lesson button will be pressed. We will check that Results page is closed and the Lesson Selection page is opened.
+}
 \end{enumerate}
 \paragraph{Lesson Execution}
 \begin{enumerate}

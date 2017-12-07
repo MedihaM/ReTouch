@@ -2,4 +2,4 @@
 
 The folders and files for this folder are as follows:
 
-Presentation - Presentation slides
+Presentation.pdf - Presentation slides

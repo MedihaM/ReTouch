@@ -1,8 +1,3 @@
-/**
- * 
- * Based off of https://www.youtube.com/watch?v=I3usNR8JrEE
- */
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -21,18 +16,26 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
- * The Lesson class constructs the UI page that displays the lesson characters and accepts user input.
+ * The Lesson class constructs the UI page that displays the lesson characters
+ * and accepts user input.
+ * <p>
+ * Major Revision History:
+ * <p>
+ * 2017-11-06 Lesson page gets generated
+ * <p>
+ * 2017-11-27 Background image appears
+ * 
  * @author Mediha Munimm
- * @version 1.0
+ * @version 2.0
  * @since 2017-11-06
  *
  */
- @SuppressWarnings("serial")
+@SuppressWarnings("serial")
 public class Lesson extends JPanel implements ActionListener {
-	 
+
 	// Button for trying a different lesson
 	private static JButton newL = new JButton("Try a Different Lesson");
-	
+
 	// Dimensions of the page
 	static int width = 1200, height = 800;
 
@@ -45,6 +48,7 @@ public class Lesson extends JPanel implements ActionListener {
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 
+		// Generate the lesson background image
 		Image img1 = Toolkit.getDefaultToolkit().getImage("img/BG.jpg");
 		g2.drawImage(img1, -5, 0, null);
 
@@ -85,7 +89,7 @@ public class Lesson extends JPanel implements ActionListener {
 		newL.setFont(new Font("Default", Font.PLAIN, 16));
 		newL.setName("newL");
 		panel.add(newL);
-		
+
 		// Accept keyboard input
 		UserInput.keyboardInput(jf);
 
@@ -102,6 +106,5 @@ public class Lesson extends JPanel implements ActionListener {
 		jf.setVisible(true);
 
 	}
-	
 
 }

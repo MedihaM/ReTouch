@@ -7,24 +7,38 @@ import java.awt.Toolkit;
 import java.io.IOException;
 
 /**
- * The DisplayCharacters class alters the display properties (colour, font) of the characters that the 
- * user inputs.
+ * The DisplayCharacters class alters the display properties (colour, font) of
+ * the characters that the user inputs.
+ * <p>
+ * Major Revision History:
+ * <p>
+ * 2017-11-06 Characters appear properly
+ * <p>
+ * 2017-11-07 Characters function properly
+ * <p>
+ * 2017-11-27 Background updated
+ * 
  * @author Mediha Munimm
- * @version 1.0
+ * @version 2.0
  * @since 2017-11-06
  *
  */
 public class DisplayCharacters {
 
 	/**
-	 * This method alters the colour of the character depending on whether a correct or incorrect
-	 * character was inputed.
-	 * @param g A graphics object.
-	 * @throws IOException On input error.
+	 * This method alters the colour of the character depending on whether a
+	 * correct or incorrect character was inputed.
+	 * 
+	 * @param g
+	 *            A graphics object.
+	 * @throws IOException
+	 *             On input error.
 	 */
 	public static void displayCharacters(Graphics g) throws IOException {
 		Graphics2D g2 = (Graphics2D) g;
-		String[] s = Parser.getStringArr(); 
+
+		// get the string of characters (dependent on the lesson)
+		String[] s = Parser.getStringArr();
 		g.setFont(new Font("Monospaced", Font.BOLD, 35));
 		int cs;
 
@@ -57,7 +71,7 @@ public class DisplayCharacters {
 					g.setColor(Color.BLACK);
 					g.setFont(new Font("default", Font.PLAIN, 35));
 					g.drawString("PRESS", Lesson.width / 2 - 58, Lesson.height * 33 / 50);
-					
+
 					g2.drawImage(imgBACK, Lesson.width / 2 - 100, Lesson.height * 2 / 3, null);
 
 					g.setFont(new Font("Monospaced", Font.BOLD, 35));
@@ -71,11 +85,14 @@ public class DisplayCharacters {
 			}
 		}
 	}
-	
+
 	/**
 	 * This method displays the line indicating the current character.
-	 * @param g A graphics object.
-	 * @throws IOException On input error.
+	 * 
+	 * @param g
+	 *            A graphics object.
+	 * @throws IOException
+	 *             On input error.
 	 */
 	public static void displayCurrentCharacter(Graphics g) throws IOException {
 		int[] x = UserInput.getCurrentCharacter();
@@ -83,6 +100,5 @@ public class DisplayCharacters {
 		g.setColor(Color.BLUE);
 		g.drawString("|", x[1] * 20 + 93, x[0] * 40 + 200);
 	}
-
 
 }

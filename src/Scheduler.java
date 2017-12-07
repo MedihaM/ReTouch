@@ -3,22 +3,28 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.io.IOException;
-
-/**
- * Based implementation based off of the code that was found at
- * https://www.journaldev.com/1050/java-timer-timertask-example
- * by Pankaj.-
- */
-
 import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * The Scheduler class runs a timer as a user completes a lesson, and calculates as well as displays the accuracy, 
- * speed, and time on the screen. 
+ * The Scheduler class runs a timer as a user completes a lesson, and calculates
+ * as well as displays the accuracy, speed, and time on the screen.
+ * 
+ * <p>
+ * elapsedTime is a state variable that keeps track of the amount of time that
+ * has passed in a lesson.
+ * 
+ * <p>
+ * Major Revision History:
+ * <p>
+ * 2017-11-02 Works for proof of concept
+ * <p>
+ * 2017-11-06 Adjusted formulas and methods
+ * 
+ * 
  * @author Mediha Munimm
- * @version 1.0
- * @since 2017-11-06
+ * @version 2.0
+ * @since 2017-11-02
  */
 public class Scheduler extends TimerTask {
 
@@ -26,7 +32,8 @@ public class Scheduler extends TimerTask {
 	static Timer timer = new Timer(true);
 
 	/**
-	 * This method runs the completeTask method which increases the elapsed time.
+	 * This method runs the completeTask method which increases the elapsed
+	 * time.
 	 */
 	@Override
 	public void run() {
@@ -58,8 +65,10 @@ public class Scheduler extends TimerTask {
 	/**
 	 * This method displays the user's lesson/typing information.
 	 * 
-	 * @param g A graphics object
-	 * @throws IOException On input error.
+	 * @param g
+	 *            A graphics object
+	 * @throws IOException
+	 *             On input error.
 	 */
 	public static void displayTimer(Graphics g) throws IOException {
 		g.setColor(Color.WHITE);
@@ -70,7 +79,8 @@ public class Scheduler extends TimerTask {
 	}
 
 	/**
-	 * This method calculates and returns the (correctly typed) characters per second.
+	 * This method calculates and returns the (correctly typed) characters per
+	 * second.
 	 * 
 	 * @return int The user's typing speed in characters per minute.
 	 */

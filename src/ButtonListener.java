@@ -3,10 +3,19 @@ import java.awt.event.ActionListener;
 import java.util.Timer;
 
 import javax.swing.JFrame;
+
 /**
- * The Button Listener page sets the functionality of buttons pressed to start a new lesson or change the current lesson.
+ * The Button Listener page sets the functionality of buttons pressed to start a
+ * new lesson or change the current lesson.
+ * <p>
+ * Major Revision History:
+ * <p>
+ * 2017-11-27 Buttons created and functioning
+ * <p>
+ * 2017-11-29 Buttons formatted properly
+ * 
  * @author Abrar Attia
- * @version 1.0
+ * @version 2.0
  * @since 2017-11-27
  *
  */
@@ -16,14 +25,17 @@ public class ButtonListener implements ActionListener {
 
 	/**
 	 * This method sets the current frame/page opened.
-	 * @param caller The currently displayed frame
+	 * 
+	 * @param caller
+	 *            The currently displayed frame
 	 */
 	public ButtonListener(JFrame caller) {
 		this.caller = caller;
 	}
 
 	/**
-	 * This method determines the actions that should be performed when a button is pressed.
+	 * This method determines the actions that should be performed when a button
+	 * is pressed.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -38,7 +50,7 @@ public class ButtonListener implements ActionListener {
 			UserInput.currentCharacter[1] = 0;
 			UserInput.correctCharacters = 0;
 			UserInput.incorrectCharacters = 0;
-			//Resets the timer
+			// Resets the timer
 			Scheduler.elapsedTime = 0;
 			Scheduler.endTimer();
 			Scheduler.timer = new Timer(true);
@@ -48,11 +60,11 @@ public class ButtonListener implements ActionListener {
 			}
 			UserInput.firstIncorrectChar = -1;
 
-			//new SelectionPage();
-                        new SelectionPage().setVisible(true);
-			//new Lesson();
+			// new SelectionPage();
+			new SelectionPage().setVisible(true);
+			// new Lesson();
 
 		}
 	}
-	
+
 }

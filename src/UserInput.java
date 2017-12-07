@@ -5,7 +5,36 @@ import java.io.IOException;
 import javax.swing.JFrame;
 
 /**
- * The UserInput class accepts user input and compares all the inputed characters to the characters in the lesson.
+ * The UserInput class accepts user input and compares all the inputed
+ * characters to the characters in the lesson.
+ * 
+ * <p>
+ * State variables:
+ * <p>
+ * - String[] stringArray holds the lesson text the user needs to type
+ * <p>
+ * - int[] currentCharacter holds the position of the current character
+ * <p>
+ * - int correctCharacters is the number of correctly entered characters
+ * <p>
+ * - int incorrectCharacters in the number of incorrectly entered characters
+ * <p>
+ * - int firstIncorrectChar stores the position of the first typed incorrect
+ * character, if there is one
+ * <p>
+ * - int[][] charStatus holds the status of each character
+ * 
+ * <p>
+ * Major Revision History:
+ * <p>
+ * 2017-11-02 Accepts user input on Linux terminal
+ * <p>
+ * 2017-11-06 Made portable for Windows/Mac
+ * <p>
+ * 2017-11-07 Proper functionality made
+ * <p>
+ * 2017-11-09 Bug fixed
+ * 
  * @author Mediha Munimm
  * @version 1.0
  * @since 2017-11-06
@@ -23,7 +52,7 @@ public class UserInput {
 	// number of incorrectly entered characters
 	public static int incorrectCharacters = 0;
 
-	// Holds the character of the first incorrect character. If there is none,
+	// Holds the position of the first incorrect character. If there is none,
 	// then it equals -1
 	static int firstIncorrectChar = -1;
 
@@ -36,10 +65,11 @@ public class UserInput {
 	/**
 	 * This method manages user input and compares it to the expected character.
 	 * 
-	 * @param jf A frame component.
+	 * @param jf
+	 *            A frame component.
 	 */
 	public static void keyboardInput(final JFrame jf) {
-		
+
 		// Add the keyboard input option:
 		jf.addKeyListener(new KeyAdapter() {
 
@@ -61,15 +91,16 @@ public class UserInput {
 						}
 					}
 				} else if (currentCharacter[1] == MAX_CHAR - 1) {
-					
+
 					// If the end of the line has been reached, move on to the
 					// next line when ENTER is pressed
 					if (typedChar == KeyEvent.VK_ENTER && firstIncorrectChar < 0) {
-						// If the last character of the last line is reached: Indicate that the program is done
-						if (currentCharacter[0] == MAX_LINE -1){
+						// If the last character of the last line is reached:
+						// Indicate that the program is done
+						if (currentCharacter[0] == MAX_LINE - 1) {
 							new Results();
 							jf.dispose();
-							
+
 						}
 						currentCharacter[1] = 0;
 						currentCharacter[0]++;
@@ -80,7 +111,8 @@ public class UserInput {
 					correctCharacters += 1;
 					currentCharacter[1] += 1; // next character
 				} else {
-					// if no previous char was incorrect, indicate this one
+					// if no previous char was incorrect, indicate this one as
+					// incorrect
 					if (firstIncorrectChar < 0)
 						firstIncorrectChar = currentCharacter[1];
 
@@ -96,9 +128,13 @@ public class UserInput {
 
 	/**
 	 * This method sets the status of the current character.
-	 * @param line The current line.
-	 * @param c The current character.
-	 * @param value The new value of the character.
+	 * 
+	 * @param line
+	 *            The current line.
+	 * @param c
+	 *            The current character.
+	 * @param value
+	 *            The new value of the character.
 	 */
 	public static void setCharStatus(int line, int c, int value) {
 		charStatus[line][c] = value;
@@ -106,8 +142,11 @@ public class UserInput {
 
 	/**
 	 * This method retrieves the status of the current character.
-	 * @param line The current line.
-	 * @param c The current character.
+	 * 
+	 * @param line
+	 *            The current line.
+	 * @param c
+	 *            The current character.
 	 * @return int The value of the character.
 	 */
 	public static int getCharStatus(int line, int c) {
@@ -116,17 +155,21 @@ public class UserInput {
 
 	/**
 	 * This method returns the position of the current integer / character.
+	 * 
 	 * @return int[] The position of the character.
 	 */
 	public static int[] getCurrentCharacter() {
 		return currentCharacter;
 	}
-	
+
 	/**
 	 * This method initializes the characters.
 	 * 
-	 * @param lesson The lesson that has been selected by the user parsed into a string.
-	 * @throws IOException On input error.
+	 * @param lesson
+	 *            The lesson that has been selected by the user parsed into a
+	 *            string.
+	 * @throws IOException
+	 *             On input error.
 	 */
 	public static void setUp(String lesson) throws IOException {
 		for (int i = 0; i < MAX_LINE; i++) {
